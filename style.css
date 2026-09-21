@@ -94,7 +94,8 @@
       font-weight: bold;
       letter-spacing: 2px;
       background: linear-gradient(90deg, #fff, var(--accent-blue));
-      -webkit-background-clip: text;
+      -webkit-background-clip: text; /* 互換性（古いChrome/Safari）用 */
+      background-clip: text;         /* 標準プロパティ */
       -webkit-text-fill-color: transparent;
       text-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
     }

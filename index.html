@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ja">
- <head>
+<head>
   <meta charset="utf-8" />
   <meta name="robots" content="noindex, nofollow">
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -19,16 +19,16 @@
   <meta property="og:locale" content="ja_JP">
   
   <link href="style.css" rel="stylesheet" />
- </head>
- <body>
+</head>
+<body>
   <!-- ヘッダー / ナビゲーションバー -->
   <header>
    <div class="nav-container">
     <div class="site-title">Glis Studio</div>
     <button aria-label="メニューを開く" class="hamburger" id="js-hamburger">
-     <span> </span>
-     <span> </span>
-     <span> </span>
+     <span></span>
+     <span></span>
+     <span></span>
     </button>
     <ul class="nav-menu" id="js-nav-menu">
      <li>
@@ -89,7 +89,7 @@
      </p>
     </div>
     
-    <!-- 新設: 更新履歴 -->
+    <!-- NEWS & HISTORY -->
     <div class="card">
      <h3
       style="
@@ -109,11 +109,10 @@
     </div>
    </section>
    
-   <!-- 2. ABOUT (このサイトについて + 利用規約) -->
+   <!-- 2. ABOUT -->
    <section class="content-section" id="about">
     <h2 class="section-title">ABOUT</h2>
     
-    <!-- サイト概要 -->
     <div class="card terms-section" id="this">
      <h3 style="font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0">
       このサイトについて
@@ -127,7 +126,6 @@
      <p>また、展示・配布している作品は各種作品は<strong> 二次創作 </strong>となっております。</p>
     </div>
     
-    <!-- BL作品について -->
     <div class="card terms-section" id="bl">
      <h3 style="font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0">
       BL作品について
@@ -137,7 +135,6 @@
      </p>
     </div>
     
-    <!-- 利用規約 -->
     <div class="card terms-section" id="terms">
      <h3 style="font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0">
       素材の利用規約
@@ -193,7 +190,6 @@
      </ul>
     </div>
     
-    <!-- 素材についての注釈 -->
      <div class="card terms-section" id="notes">
      <h3 style="font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0">
       素材についての注釈
@@ -240,11 +236,11 @@
 
      <!-- カテゴリフィルターボタン群 -->
      <div class="gallery-filter-container">
-       <button class="metal-btn filter-btn active" onclick="filterGallery('all')">ALL</button>
-       <button class="metal-btn filter-btn" onclick="filterGallery('bl')">BL</button>
+       <button class="metal-btn filter-btn active" data-category="all" onclick="filterGallery('all')">ALL</button>
+       <button class="metal-btn filter-btn" data-category="bl" onclick="filterGallery('bl')">BL</button>
      </div>
 
-    <!-- 画像グリッド (data-category 属性でカテゴリを指定) -->
+    <!-- 画像グリッド -->
     <div class="gallery-grid">
      
     <div class="gallery-item" onclick="openModal('images/susumu06.webp', '【私服】猪狩進')">
@@ -296,7 +292,6 @@
     </div> 
      
     <!-- BLイラスト -->
-     
     <div class="gallery-item" data-category="bl" onclick="openModal('images/mmss01.webp', '【BL】守と進')">
      <img src="images/mmss01.webp" alt="【BL】守と進" />
     </div>
@@ -308,7 +303,7 @@
     </div>
    </section>
    
-   <!-- 4. ASSETS (素材配布) -->
+   <!-- 4. ASSETS -->
    <section class="content-section" id="assets">
     <h2 class="section-title">FREE ASSETS</h2>
 
@@ -325,47 +320,47 @@
         <div class="asset-item">
          <img alt="立ち絵 通常" src="assets/webp/susumu01.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="susumu01.png" href="assets/png/susumu01.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="susumu01.webp" href="assets/webp/susumu01.webp">WebP</a>
+          <a class="metal-btn asset-dl-btn" download="susumu01.png" href="assets/png/susumu01.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="susumu01.webp" href="assets/webp/susumu01.webp">WebP</a>
+         </div>
         </div>
-       </div>
         <div class="asset-item">
          <img alt="立ち絵 微笑む" src="assets/webp/susumu02.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="susumu02.png" href="assets/png/susumu02.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="susumu02.webp" href="assets/webp/susumu02.webp">WebP</a>
-        </div>
-       </div>          
+          <a class="metal-btn asset-dl-btn" download="susumu02.png" href="assets/png/susumu02.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="susumu02.webp" href="assets/webp/susumu02.webp">WebP</a>
+         </div>
+        </div>          
         <div class="asset-item">
          <img alt="立ち絵 笑顔" src="assets/webp/susumu03.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="susumu03.png" href="assets/png/susumu03.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="susumu03.webp" href="assets/webp/susumu03.webp">WebP</a>
-        </div>
-       </div>          
+          <a class="metal-btn asset-dl-btn" download="susumu03.png" href="assets/png/susumu03.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="susumu03.webp" href="assets/webp/susumu03.webp">WebP</a>
+         </div>
+        </div>          
         <div class="asset-item">
          <img alt="立ち絵 驚く" src="assets/webp/susumu04.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="susumu04.png" href="assets/png/susumu04.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="susumu04.webp" href="assets/webp/susumu04.webp">WebP</a>
-        </div>
-       </div>          
+          <a class="metal-btn asset-dl-btn" download="susumu04.png" href="assets/png/susumu04.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="susumu04.webp" href="assets/webp/susumu04.webp">WebP</a>
+         </div>
+        </div>          
         <div class="asset-item">
          <img alt="立ち絵 怒る" src="assets/webp/susumu05.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="susumu05.png" href="assets/png/susumu05.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="susumu05.webp" href="assets/webp/susumu05.webp">WebP</a>
-        </div>
-       </div>          
+          <a class="metal-btn asset-dl-btn" download="susumu05.png" href="assets/png/susumu05.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="susumu05.webp" href="assets/webp/susumu05.webp">WebP</a>
+         </div>
+        </div>          
         <div class="asset-item">
          <img alt="立ち絵 困惑" src="assets/webp/susumu06.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="susumu06.png" href="assets/png/susumu06.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="susumu06.webp" href="assets/webp/susumu06.webp">WebP</a>
+          <a class="metal-btn asset-dl-btn" download="susumu06.png" href="assets/png/susumu06.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="susumu06.webp" href="assets/webp/susumu06.webp">WebP</a>
+         </div>
         </div>
        </div>
       </div>
-     </div>
       <button class="metal-btn slider-arrow next" onclick="moveAssetSlide('char1', 1)">&gt;</button>
      </div>
     </div>
@@ -381,33 +376,33 @@
         <div class="asset-item">
          <img alt="立ち絵 通常" src="assets/webp/susumu_b01.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="susumu_b01.png" href="assets/png/susumu_b01.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="susumu_b01.webp" href="assets/webp/susumu_b01.webp">WebP</a>
-        </div>
-       </div>          
+          <a class="metal-btn asset-dl-btn" download="susumu_b01.png" href="assets/png/susumu_b01.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="susumu_b01.webp" href="assets/webp/susumu_b01.webp">WebP</a>
+         </div>
+        </div>          
         <div class="asset-item">
          <img alt="立ち絵 微笑む" src="assets/webp/susumu_b02.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="susumu_b02.png" href="assets/png/susumu_b02.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="susumu_b02.webp" href="assets/webp/susumu_b02.webp">WebP</a>
-        </div>
-       </div>          
+          <a class="metal-btn asset-dl-btn" download="susumu_b02.png" href="assets/png/susumu_b02.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="susumu_b02.webp" href="assets/webp/susumu_b02.webp">WebP</a>
+         </div>
+        </div>          
         <div class="asset-item">
          <img alt="立ち絵 笑顔" src="assets/webp/susumu_b03.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="susumu_b03.png" href="assets/png/susumu_b03.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="susumu_b03.webp" href="assets/webp/susumu_b03.webp">WebP</a>
-        </div>
-       </div>          
+          <a class="metal-btn asset-dl-btn" download="susumu_b03.png" href="assets/png/susumu_b03.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="susumu_b03.webp" href="assets/webp/susumu_b03.webp">WebP</a>
+         </div>
+        </div>          
         <div class="asset-item">
          <img alt="立ち絵 驚く" src="assets/webp/susumu_b04.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="susumu_b04.png" href="assets/png/susumu_b04.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="susumu_b04.webp" href="assets/webp/susumu_b04.webp">WebP</a>
-        </div>
-       </div>          
+          <a class="metal-btn asset-dl-btn" download="susumu_b04.png" href="assets/png/susumu_b04.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="susumu_b04.webp" href="assets/webp/susumu_b04.webp">WebP</a>
+         </div>
+        </div>          
+       </div>
       </div>
-     </div>
       <button class="metal-btn slider-arrow next" onclick="moveAssetSlide('char2', 1)">&gt;</button>
      </div>
     </div>
@@ -425,33 +420,33 @@
         <div class="asset-item">
          <img alt="立ち絵 笑み" src="assets/webp/mamoru01.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="mamoru01.png" href="assets/png/mamoru01.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="mamoru01.webp" href="assets/webp/mamoru01.webp">WebP</a>
-        </div>
-       </div>          
+          <a class="metal-btn asset-dl-btn" download="mamoru01.png" href="assets/png/mamoru01.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="mamoru01.webp" href="assets/webp/mamoru01.webp">WebP</a>
+         </div>
+        </div>          
         <div class="asset-item">
          <img alt="立ち絵 怒る" src="assets/webp/mamoru02.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="mamoru02.png" href="assets/png/mamoru02.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="mamoru02.webp" href="assets/webp/mamoru02.webp">WebP</a>
-        </div>
-       </div>          
+          <a class="metal-btn asset-dl-btn" download="mamoru02.png" href="assets/png/mamoru02.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="mamoru02.webp" href="assets/webp/mamoru02.webp">WebP</a>
+         </div>
+        </div>          
         <div class="asset-item">
          <img alt="立ち絵 驚く" src="assets/webp/mamoru03.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="mamoru03.png" href="assets/png/mamoru03.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="mamoru03.webp" href="assets/webp/mamoru03.webp">WebP</a>
-        </div>
-       </div>          
+          <a class="metal-btn asset-dl-btn" download="mamoru03.png" href="assets/png/mamoru03.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="mamoru03.webp" href="assets/webp/mamoru03.webp">WebP</a>
+         </div>
+        </div>          
         <div class="asset-item">
          <img alt="立ち絵 疲労" src="assets/webp/mamoru04.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="mamoru04.png" href="assets/png/mamoru04.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="mamoru04.webp" href="assets/webp/mamoru04.webp">WebP</a>
-        </div>
-       </div>          
+          <a class="metal-btn asset-dl-btn" download="mamoru04.png" href="assets/png/mamoru04.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="mamoru04.webp" href="assets/webp/mamoru04.webp">WebP</a>
+         </div>
+        </div>          
+       </div>
       </div>
-     </div>
       <button class="metal-btn slider-arrow next" onclick="moveAssetSlide('char3', 1)">&gt;</button>
      </div>
     </div>
@@ -469,30 +464,30 @@
         <div class="asset-item">
          <img alt="立ち絵 通常" src="assets/webp/tomozawa01.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="tomozawa01.png" href="assets/png/tomozawa01.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="tomozawa01.webp" href="assets/webp/tomozawa01.webp">WebP</a>
-        </div>
-       </div>          
+          <a class="metal-btn asset-dl-btn" download="tomozawa01.png" href="assets/png/tomozawa01.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="tomozawa01.webp" href="assets/webp/tomozawa01.webp">WebP</a>
+         </div>
+        </div>          
         <div class="asset-item">
          <img alt="立ち絵 笑み" src="assets/webp/shindo01.webp" />
          <div class="asset-dl-area">
-         <a class="metal-btn asset-dl-btn" download="shindo01.png" href="assets/png/shindo01.png">PNG</a>
-         <a class="metal-btn asset-dl-btn" download="shindo01.webp" href="assets/webp/shindo01.webp">WebP</a>
+          <a class="metal-btn asset-dl-btn" download="shindo01.png" href="assets/png/shindo01.png">PNG</a>
+          <a class="metal-btn asset-dl-btn" download="shindo01.webp" href="assets/webp/shindo01.webp">WebP</a>
+         </div>
         </div>
-       </div>
         <div class="asset-item">
          <img alt="empty" src="assets/empty.webp" />
          <div class="asset-dl-area">
-        </div>
-       </div>          
+         </div>
+        </div>          
+       </div>
       </div>
-     </div>
       <button class="metal-btn slider-arrow next" onclick="moveAssetSlide('char4', 1)">&gt;</button>
      </div>
     </div>
    </section>
 
-   <!-- 5. PROFILE (管理人プロフィール) -->
+   <!-- 5. PROFILE -->
    <section class="content-section" id="profile">
     <h2 class="section-title">PROFILE</h2>
     <div class="card">
