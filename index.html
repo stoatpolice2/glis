@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex, nofollow">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Glis Studio - AI Illustrated Work &amp; Free Assets</title>
+  
+  <!-- ファビコンの設定 -->
+  <link rel="icon" href="favicon.webp" type="image/x-icon">
+
+  <!-- Open Graph Protocol (OGP) の設定 -->
+  <meta property="og:title" content=">Glis Studio - AI Illustrated Work &amp; Free Assets">
+  <meta property="og:description" content="AI生成イラスト展示＆ゲーム用素材配布サイト">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stoatpolice2.github.io/Glis/">
+  <meta property="og:image" content="images/ogp.webp">
+  <meta property="og:site_name" content="Glis Studio">
+  <meta property="og:locale" content="ja_JP">
+  
+  <link href="style.css" rel="stylesheet" />
+ </head>
+ <body>
+  <!-- ヘッダー / ナビゲーションバー -->
+  <header>
+   <div class="nav-container">
+    <div class="site-title">Glis Studio</div>
+    <button aria-label="メニューを開く" class="hamburger" id="js-hamburger">
+     <span> </span>
+     <span> </span>
+     <span> </span>
+    </button>
+    <ul class="nav-menu" id="js-nav-menu">
+     <li>
+      <a class="nav-link active" data-target="home"> HOME </a>
+     </li>
+     <li>
+      <a class="nav-link" data-target="about"> ABOUT </a>
+     </li>
+     <li>
+      <a class="nav-link" data-target="gallery"> GALLERY </a>
+     </li>
+     <li>
+      <a class="nav-link" data-target="assets"> ASSETS </a>
+     </li>
+     <li>
+      <a class="nav-link" data-target="profile"> PROFILE </a>
+     </li>
+    </ul>
+   </div>
+  </header>
+  
+  <!-- メインコンテンツ -->
+  <main>
+   
+   <!-- 1. HOME (ヒーローセクション + 更新履歴) -->
+   <section class="content-section active" id="home">
+    <div class="hero-slider-container">
+     <div class="hero-slider-track" id="js-hero-track">
+      <div class="hero-slide">
+       <img alt="ピックアップ作品1" src="images/susumu01.webp" />
+       <div class="hero-caption">
+        <h3>Featured Work #01</h3>
+        <p>【カイザース】猪狩進</p>
+       </div>
+      </div>
+      <div class="hero-slide">
+       <img alt="ピックアップ作品2" src="images/susumu03.webp" />
+       <div class="hero-caption">
+        <h3>Featured Work #02</h3>
+        <p>【オリックス】猪狩進</p>
+       </div>
+      </div>
+      <div class="hero-slide">
+       <img alt="ピックアップ作品3" src="images/susumu04.webp" />
+       <div class="hero-caption">
+        <h3>Featured Work #03</h3>
+        <p>【ブレザー】猪狩進</p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="card" style="text-align: center; margin-bottom: 1.5rem">
+     <h2>Welcome to Glis Studio</h2>
+     <p style="margin-top: 0.5rem; color: var(--text-sub)">
+      当サイトは生成AIを利用して制作した二次創作イラストを展示・配布している個人サイトです。<br />
+      作品の中にはBL要素を含むものもございます（カテゴリを分けて展示してあります）<br />
+      主にパワフルプロ野球シリーズの猪狩進くんを愛でています。
+     </p>
+    </div>
+    
+    <!-- 新設: 更新履歴 -->
+    <div class="card">
+     <h3
+      style="
+       color: var(--accent-blue);
+       margin-bottom: 1rem;
+       border-bottom: 1px solid var(--border-color);
+       padding-bottom: 0.5rem;
+      ">
+      NEWS &amp; HISTORY
+     </h3>
+     <ul class="news-list">
+      <li class="news-item">
+       <span class="news-date"> 2026.09.22 </span>
+       <span class="news-text"> サイトを開設しました </span>
+      </li>
+     </ul>
+    </div>
+   </section>
+   
+   <!-- 2. ABOUT (このサイトについて + 利用規約) -->
+   <section class="content-section" id="about">
+    <h2 class="section-title">ABOUT</h2>
+    
+    <!-- サイト概要 -->
+    <div class="card terms-section" id="this">
+     <h3 style="font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0">
+      このサイトについて
+     </h3>
+     <p>
+      当サイトは、<strong> AI生成イラストの展示 </strong>および、<strong> AI生成イラストを使用した素材の配布 </strong>を行っている個人サイトです。
+     </p>
+     <p>
+      プロンプト（指示文）の抽出・生成プロセスにおいては、<strong> 自作のイラストをベースに使用 </strong>して制作を行っています。
+     </p>
+     <p>また、展示・配布している作品は各種作品は<strong> 二次創作 </strong>となっております。</p>
+    </div>
+    
+    <!-- BL作品について -->
+    <div class="card terms-section" id="bl">
+     <h3 style="font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0">
+      BL作品について
+     </h3>
+     <p>
+      「Gallery」セクションにはBL作品も掲載しています。「ALL」カテゴリからは分離してありますが、<strong> カップリングごとの分類はしていない </strong>ため、苦手なカップリングがある方はご注意ください。だいたい<strong> 守×進 </strong>か<strong> 神童×進 </strong>になると思います。
+     </p>
+    </div>
+    
+    <!-- 利用規約 -->
+    <div class="card terms-section" id="terms">
+     <h3 style="font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0">
+      素材の利用規約
+     </h3>
+     <p style="margin: 1rem 0">
+      当サイトで配布している「ゲーム用のイラスト素材」に関する利用規約です。ご利用の際は一読をお願いいたします。<br />
+      なお、ここで記述している「版権元の二次創作ガイドライン」は「パワプロアドベンチャーズ」のガイドラインに準拠したものです。
+     </p>
+     <p class="sub-text">パワアドのガイドラインはあくまでパワアドのなんですが、ほかにしっかりとしたガイドラインがないので…。</p>
+     <h3>許可していること</h3>
+     <ul class="terms-list allow">
+      <li>自作ゲームでの使用</li>
+      <li>
+        夢、BL、R-18ゲームなどでの使用
+        <div class="terms-note">
+         ※過度に暴力的、性的な表現は版権元のガイドラインによって禁止されています。
+        </div>
+      </li>
+      <li>
+       画像の軽度な加工（サイズ変更、色味変更、トリミングしてバストアップ絵や顔アイコンにする、画像を反転させて使用する際にアシンメトリーになっているパーツを編集する等）
+      </li>
+     </ul>
+     <h3>許可していないこと</h3>
+     <ul class="terms-list deny">
+      <li>自作発言</li>
+      <li>
+        素材そのものの二次配布
+        <div class="terms-note">
+         ※製作したゲームをダウンロードで配布する場合など、コンテンツの一部としてはOKです。その場合、配布ページなどのわかりやすいところに配布元を明記してください。
+        </div>
+      </li>
+      <li>
+        商用ゲームなど、営利目的での使用
+        <div class="terms-note">
+         ※版権元のガイドラインによって営利目的での二次創作は禁止されています。
+        </div>
+      </li>
+      <li>原作キャラクターのイメージを著しく損ねるような加工（悪意を感じられるような表情に変更する等）</li>
+     </ul>
+     <h3>使用する前に管理人に相談してほしいこと</h3>
+     <ul class="terms-list confirm">
+      <li>原作を元にした二次創作ゲーム以外のゲームで使用したい場合
+        <div class="terms-note">
+         ※オリジナルキャラや、容姿が似た別の版権キャラの画像として使用したい場合などを想定しています。
+        </div>
+      </li>
+      <li>ゲームの立ち絵以外の用途（サイト内のデザインとして等）で使用したい場合</li>
+     </ul>
+     <h3>必須ではないがしてくれると嬉しいこと</h3>
+     <ul class="terms-list welcome">
+      <li>使用報告（SNSやWaveboxをご利用ください）</li>
+      <li>クレジット表記（サイト名、制作者名、このサイトへのリンクなど）</li>
+     </ul>
+    </div>
+    
+    <!-- 素材についての注釈 -->
+     <div class="card terms-section" id="notes">
+     <h3 style="font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0">
+      素材についての注釈
+     </h3>
+     <h3>画像サイズについて</h3> 
+     <p>
+      当サイトで配布している立ち絵素材は、<strong> すべてのキャラクターの画像サイズが均等（400×720px） </strong>になっています。
+     </p>
+     <p>
+      そのため、キャラクター同士を並べると比率の関係で<strong> 小柄なキャラクターのほうが大きく表示されます。</strong>
+     </p>
+     <p>
+      身長差を再現したい場合は、画像を加工するか、使用しているゲーム制作エンジンの機能などを利用して画像サイズを調整してください。
+     </p>
+     <h3>保存形式について</h3> 
+      <p>
+      当サイトで配布している画像素材は「透過PNG」もしくは「WebP」形式でダウンロードできます。<br />
+      それぞれの保存形式にはメリット・デメリットがありますので、用途に合わせてご利用ください。 
+      </p>
+      
+     <h2>・透過PNG（.png）</h2> 
+     <ul class="terms-list allow">
+      <li>背景が透過しているため、Webデザインや動画、グラフィック制作で他の背景に重ねて使いやすい。可逆圧縮のため画質が劣化しない。</li>
+     </ul>
+      <ul class="terms-list confirm">
+      <li>データ容量（ファイルサイズ）が大きくなりやすい。</li>
+     </ul>
+      
+     <h2>・WebP（.webp）</h2> 
+     <ul class="terms-list allow">       
+      <li>PNGと同等以上に背景透過に対応しつつ、ファイルサイズを非常に小さく（軽量に）抑えられるため、Webサイトの表示速度向上に貢献する。</li>
+     </ul>
+     <ul class="terms-list confirm">
+      <li>一部の古いデザインソフトや動画編集ソフトで直接読み込めない場合がある。</li>
+     </ul>
+
+    </div>
+    
+   </section>
+   
+    <!-- 3. GALLERY -->
+    <section id="gallery" class="content-section">
+      <h2 class="section-title">GALLERY</h2>
+
+      <!-- カテゴリフィルターボタン群 -->
+      <div class="gallery-filter-container">
+        <button class="metal-btn filter-btn active" onclick="filterGallery('all')">ALL</button>
+        <button class="metal-btn filter-btn" onclick="filterGallery('bl')">BL</button>
+      </div>
+
+     <!-- 画像グリッド (data-category 属性でカテゴリを指定) -->
+     <div class="gallery-grid">
+     
+     <div class="gallery-item" onclick="openModal('images/susumu06.webp', '【私服】猪狩進')">
+      <img src="images/susumu06.webp" alt="【私服】猪狩進" />
+     </div>
+     
+     <div class="gallery-item" onclick="openModal('images/susumu05.webp', '【ブレザー】猪狩進')">
+      <img src="images/susumu05.webp" alt="【ブレザー】猪狩進" />
+     </div>
+     
+     <div class="gallery-item" onclick="openModal('images/mamoru03.webp', '【あかつき】猪狩守')">
+      <img src="images/mamoru03.webp" alt="【あかつき】猪狩守" />
+     </div>
+     
+     <div class="gallery-item" onclick="openModal('images/shindo01.webp', '【レッドエンジェルス】神童裕二郎')">
+      <img src="images/shindo01.webp" alt="【レッドエンジェルス】神童裕二郎" />
+     </div>
+     
+     <div class="gallery-item" onclick="openModal('images/susumu04.webp', '【ブレザー】猪狩進')">
+      <img src="images/susumu04.webp" alt="【ブレザー】猪狩進" />
+     </div>
+     
+     <div class="gallery-item" onclick="openModal('images/shindo02.webp', '【オリックス】神童裕二郎')">
+      <img src="images/shindo02.webp" alt="【オリックス】神童裕二郎" />
+     </div>
+     
+     <div class="gallery-item" onclick="openModal('images/susumu03.webp', '【オリックス】猪狩進')">
+      <img src="images/susumu03.webp" alt="【オリックス】猪狩進" />
+     </div>
+     
+     <div class="gallery-item" onclick="openModal('images/susumu02.webp', '【ブレザー】猪狩進')">
+      <img src="images/susumu02.webp" alt="【ブレザー】猪狩進" />
+     </div>
+     
+     <div class="gallery-item" onclick="openModal('images/mamoru02.webp', '【ブレザー】猪狩守')">
+      <img src="images/mamoru02.webp" alt="【ブレザー】猪狩守" />
+     </div>
+     
+     <div class="gallery-item" onclick="openModal('images/tomozawa01.webp', '【カイザース】友沢亮')">
+      <img src="images/tomozawa01.webp" alt="【カイザース】友沢亮" />
+     </div>
+     
+     <div class="gallery-item" onclick="openModal('images/susumu01.webp', '【カイザース】猪狩進')">
+      <img src="images/susumu01.webp" alt="【カイザース】猪狩進" />
+     </div>
+
+     <div class="gallery-item" onclick="openModal('images/mamoru01.webp', '【カイザース】猪狩守')">
+      <img src="images/mamoru01.webp" alt="【カイザース】猪狩守" />
+     </div> 
+      
+     <!-- BLイラスト -->
+      
+     <div class="gallery-item" data-category="bl" onclick="openModal('images/mmss01.webp', '【BL】守と進')">
+      <img src="images/mmss01.webp" alt="【BL】守と進" />
+     </div>
+
+     <div class="gallery-item" data-category="bl" onclick="openModal('images/snss01.webp', '【BL】神童と進')">
+      <img src="images/snss01.webp" alt="【BL】神童と進" />
+     </div>
+
+    </div>
+   </section>
+   
+   <!-- 4. ASSETS (素材配布) -->
+   <section class="content-section" id="assets">
+    <h2 class="section-title">FREE ASSETS</h2>
+
+    <!-- キャラクター① -->
+    <div class="card asset-character-block">
+     <h3>Character 01 : 猪狩 進 (あかつき)</h3>
+     <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 1rem">
+      あかつき大附属高校野球部のユニフォーム姿
+     </p>
+     <div class="asset-slider-wrapper">
+      <button class="metal-btn slider-arrow prev" onclick="moveAssetSlide('char1', -1)">&lt;</button>
+      <div class="asset-slider-container">
+       <div class="asset-slider-track" id="track-char1">
+        <div class="asset-item">
+         <img alt="立ち絵 通常" src="assets/webp/susumu01.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="susumu01.png" href="assets/png/susumu01.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="susumu01.webp" href="assets/webp/susumu01.webp">WebP</a>
+        </div>
+       </div>
+        <div class="asset-item">
+         <img alt="立ち絵 微笑む" src="assets/webp/susumu02.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="susumu02.png" href="assets/png/susumu02.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="susumu02.webp" href="assets/webp/susumu02.webp">WebP</a>
+        </div>
+       </div>         
+        <div class="asset-item">
+         <img alt="立ち絵 笑顔" src="assets/webp/susumu03.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="susumu03.png" href="assets/png/susumu03.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="susumu03.webp" href="assets/webp/susumu03.webp">WebP</a>
+        </div>
+       </div>         
+        <div class="asset-item">
+         <img alt="立ち絵 驚く" src="assets/webp/susumu04.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="susumu04.png" href="assets/png/susumu04.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="susumu04.webp" href="assets/webp/susumu04.webp">WebP</a>
+        </div>
+       </div>         
+        <div class="asset-item">
+         <img alt="立ち絵 怒る" src="assets/webp/susumu05.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="susumu05.png" href="assets/png/susumu05.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="susumu05.webp" href="assets/webp/susumu05.webp">WebP</a>
+        </div>
+       </div>         
+        <div class="asset-item">
+         <img alt="立ち絵 困惑" src="assets/webp/susumu06.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="susumu06.png" href="assets/png/susumu06.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="susumu06.webp" href="assets/webp/susumu06.webp">WebP</a>
+        </div>
+       </div>
+      </div>
+     </div>
+      <button class="metal-btn slider-arrow next" onclick="moveAssetSlide('char1', 1)">&gt;</button>
+     </div>
+    </div>
+
+    <!-- キャラクター② -->
+    <div class="card asset-character-block">
+     <h3>Character 02 : 猪狩 進 (ブレザー)</h3>
+     <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 1rem">あかつき大附属高校の制服姿</p>
+     <div class="asset-slider-wrapper">
+      <button class="metal-btn slider-arrow prev" onclick="moveAssetSlide('char2', -1)">&lt;</button>
+      <div class="asset-slider-container">
+       <div class="asset-slider-track" id="track-char2">
+        <div class="asset-item">
+         <img alt="立ち絵 通常" src="assets/webp/susumu_b01.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="susumu_b01.png" href="assets/png/susumu_b01.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="susumu_b01.webp" href="assets/webp/susumu_b01.webp">WebP</a>
+        </div>
+       </div>         
+        <div class="asset-item">
+         <img alt="立ち絵 微笑む" src="assets/webp/susumu_b02.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="susumu_b02.png" href="assets/png/susumu_b02.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="susumu_b02.webp" href="assets/webp/susumu_b02.webp">WebP</a>
+        </div>
+       </div>         
+        <div class="asset-item">
+         <img alt="立ち絵 笑顔" src="assets/webp/susumu_b03.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="susumu_b03.png" href="assets/png/susumu_b03.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="susumu_b03.webp" href="assets/webp/susumu_b03.webp">WebP</a>
+        </div>
+       </div>         
+        <div class="asset-item">
+         <img alt="立ち絵 驚く" src="assets/webp/susumu_b04.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="susumu_b04.png" href="assets/png/susumu_b04.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="susumu_b04.webp" href="assets/webp/susumu_b04.webp">WebP</a>
+        </div>
+       </div>         
+      </div>
+     </div>
+      <button class="metal-btn slider-arrow next" onclick="moveAssetSlide('char2', 1)">&gt;</button>
+     </div>
+    </div>
+
+    <!-- キャラクター③ -->
+    <div class="card asset-character-block">
+     <h3>Character 03 : 猪狩 守 (あかつき)</h3>
+     <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 1rem">
+      あかつき大附属高校野球部のユニフォーム姿
+     </p>
+     <div class="asset-slider-wrapper">
+      <button class="metal-btn slider-arrow prev" onclick="moveAssetSlide('char3', -1)">&lt;</button>
+      <div class="asset-slider-container">
+       <div class="asset-slider-track" id="track-char3">
+        <div class="asset-item">
+         <img alt="立ち絵 笑み" src="assets/webp/mamoru01.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="mamoru01.png" href="assets/png/mamoru01.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="mamoru01.webp" href="assets/webp/mamoru01.webp">WebP</a>
+        </div>
+       </div>         
+        <div class="asset-item">
+         <img alt="立ち絵 怒る" src="assets/webp/mamoru02.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="mamoru02.png" href="assets/png/mamoru02.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="mamoru02.webp" href="assets/webp/mamoru02.webp">WebP</a>
+        </div>
+       </div>         
+        <div class="asset-item">
+         <img alt="立ち絵 驚く" src="assets/webp/mamoru03.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="mamoru03.png" href="assets/png/mamoru03.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="mamoru03.webp" href="assets/webp/mamoru03.webp">WebP</a>
+        </div>
+       </div>         
+        <div class="asset-item">
+         <img alt="立ち絵 疲労" src="assets/webp/mamoru04.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="mamoru04.png" href="assets/png/mamoru04.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="mamoru04.webp" href="assets/webp/mamoru04.webp">WebP</a>
+        </div>
+       </div>         
+      </div>
+     </div>
+      <button class="metal-btn slider-arrow next" onclick="moveAssetSlide('char3', 1)">&gt;</button>
+     </div>
+    </div>
+
+    <!-- キャラクター③ -->
+    <div class="card asset-character-block">
+     <h3>Character 03 : 友沢、神童</h3>
+     <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 1rem">
+      カイザース友沢とレッドエンジェルス神童
+     </p>
+     <div class="asset-slider-wrapper">
+      <button class="metal-btn slider-arrow prev" onclick="moveAssetSlide('char4', -1)">&lt;</button>
+      <div class="asset-slider-container">
+       <div class="asset-slider-track" id="track-char4">
+        <div class="asset-item">
+         <img alt="立ち絵 通常" src="assets/webp/tomozawa01.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="tomozawa01.png" href="assets/png/tomozawa01.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="tomozawa01.webp" href="assets/webp/tomozawa01.webp">WebP</a>
+        </div>
+       </div>         
+        <div class="asset-item">
+         <img alt="立ち絵 笑み" src="assets/webp/shindo01.webp" />
+         <div class="asset-dl-area">
+         <a class="metal-btn asset-dl-btn" download="shindo01.png" href="assets/png/shindo01.png">PNG</a>
+         <a class="metal-btn asset-dl-btn" download="shindo01.webp" href="assets/webp/shindo01.webp">WebP</a>
+        </div>
+       </div>
+        <div class="asset-item">
+         <img alt="empty" src="assets/empty.webp" />
+         <div class="asset-dl-area">
+        </div>
+       </div>         
+      </div>
+     </div>
+      <button class="metal-btn slider-arrow next" onclick="moveAssetSlide('char4', 1)">&gt;</button>
+     </div>
+    </div>
+   </section>
+
+   <!-- 5. PROFILE (管理人プロフィール) -->
+   <section class="content-section" id="profile">
+    <h2 class="section-title">PROFILE</h2>
+    <div class="card">
+     <div class="profile-header">
+      <img alt="okojo" class="profile-icon" src="images/icon.webp" />
+      <div>
+       <h3>okojo</h3>
+       <p style="color: var(--accent-blue); font-size: 0.9rem">Webmaster</p>
+      </div>
+     </div>
+     <div style="margin-bottom: 1.5rem">
+      <h4>自己紹介</h4>
+      <p style="color: var(--text-sub); margin-top: 0.5rem">
+       okojoと申します。<br />
+       手描きイラストも生成AIイラストも描く（作る）人です<br />
+       小説の執筆、Webページ制作、同人ゲーム制作も趣味です。
+      </p>
+     </div>
+     <div style="margin-bottom: 1.5rem">
+      <h4>使用しているツール一覧</h4>
+      <ul style="list-style-type: square; padding-left: 1.2rem; color: var(--text-sub); margin-top: 0.5rem">
+       <li>画像生成: PixAI / Days AI</li>
+       <li>加工・補正: FireAlpaca / Gemini</li>
+       <li>Web制作: Phoenix Code</li>
+      </ul>
+     </div>
+     <div>
+      <h4>SNS / リンク</h4>
+      <div class="profile-links">
+        <div class="link-card">
+        <a href="https://wavebox.me/wave/5mgaf644z1a0hker/" rel="noopener" target="_blank"> Wavebox </a>
+        <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 0.3rem">
+         素材の使用報告やメッセージ等はこちらからどうぞ。
+        </p>
+       </div>
+       <div class="link-card">
+        <a href="https://bsky.app/profile/stoatpolice2.bsky.social" rel="noopener" target="_blank"> Bluesky </a>
+        <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 0.3rem">
+         ゲーム、二次創作、Webサイトなどに関する話題をしています。
+        </p>
+       </div>
+       <div class="link-card">
+        <a href="https://mixi.social/@stoatpolice2" rel="noopener" target="_blank"> mixi2 </a>
+        <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 0.3rem">
+         コーディング、プログラミング、AIに関する話題をしています。
+        </p>
+       </div>
+       <div class="link-card">
+        <a href="https://crepu.net/user/stoatpolice2" rel="noopener" target="_blank"> くるっぷ </a>
+        <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 0.3rem">
+         AI生成イラストに関する話題をつぶやいています。
+        </p>
+       </div>
+       <div class="link-card">
+        <a href="https://stoatpolice2.github.io/labo/" rel="noopener" target="_blank"> Stoat Labo </a>
+        <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 0.3rem">
+         Webサイト用テンプレート配布＆Webツール公開サイトです。
+        </p>
+       </div>
+       <div class="link-card">
+        <a href="https://akatsukibrothers.wixsite.com/ashiato" rel="noopener" target="_blank"> 鼠の足跡 </a>
+        <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 0.3rem">
+         パワプロのBL二次創作イラスト＆小説サイトです。
+        </p>
+       </div>
+      </div>
+     </div>
+      
+    </div>
+   </section>
+  </main>
+  
+  <!-- 拡大表示用モーダル -->
+  <div id="js-modal" class="modal" onclick="closeModal()">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    
+    <!-- 前へボタン -->
+    <button class="modal-nav prev" onclick="event.stopPropagation(); changeModalImage(-1)">&lt;</button>
+    
+    <div class="modal-container" onclick="event.stopPropagation()">
+      <img id="js-modal-img" class="modal-content" src="" alt="拡大画像">
+      <div id="js-modal-title" class="modal-title"></div>
+    </div>
+
+    <!-- 次へボタン -->
+    <button class="modal-nav next" onclick="event.stopPropagation(); changeModalImage(1)">&gt;</button>
+  </div>
+  
+  <!-- フッター -->
+  <footer>
+   <p>© Glis Studio / okojo All Rights Reserved. / ⓒKonami Digital Entertainment</p>
+  </footer>
+  
+  <!-- JavaScript制御 -->
+  <script src="script.js"></script>
+ </body>
+</html>
