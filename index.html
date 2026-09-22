@@ -83,9 +83,9 @@
     <div class="card" style="text-align: center; margin-bottom: 1.5rem">
      <h2>Welcome to Glis Studio</h2>
      <p style="margin-top: 0.5rem; color: var(--text-sub)">
-      当サイトは生成AIを利用して制作した二次創作イラストを展示・配布している個人サイトです。<br />
-      作品の中にはBL要素を含むものもございます（カテゴリを分けて展示してあります）<br />
-      主にパワフルプロ野球シリーズの猪狩進くんを愛でています。
+      当サイトは生成AIを利用して制作した二次創作イラストを展示・配布している個人サイトです<br />
+      作品の中にはBL要素を含むものもあります（※カテゴリを分けて展示しています）<br />
+      主にパワフルプロ野球シリーズの猪狩進くんを愛でています
      </p>
     </div>
     
@@ -124,15 +124,6 @@
       プロンプト（指示文）の抽出・生成プロセスにおいては、<strong> 自作のイラストをベースに使用 </strong>して制作を行っています。
      </p>
      <p>また、展示・配布している作品は各種作品は<strong> 二次創作 </strong>となっております。</p>
-    </div>
-    
-    <div class="card terms-section" id="bl">
-     <h3 style="font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0">
-      BL作品について
-     </h3>
-     <p>
-      「Gallery」セクションにはBL作品も掲載しています。「ALL」カテゴリからは分離してありますが、<strong> カップリングごとの分類はしていない </strong>ため、苦手なカップリングがある方はご注意ください。だいたい<strong> 守×進 </strong>か<strong> 神童×進 </strong>になると思います。
-     </p>
     </div>
     
     <div class="card terms-section" id="terms">
@@ -199,10 +190,7 @@
       当サイトで配布している立ち絵素材は、<strong> すべてのキャラクターの画像サイズが均等（400×720px） </strong>になっています。
      </p>
      <p>
-      そのため、キャラクター同士を並べると比率の関係で<strong> 小柄なキャラクターのほうが大きく表示されます。</strong>
-     </p>
-     <p>
-      身長差を再現したい場合は、画像を加工するか、使用しているゲーム制作エンジンの機能などを利用して画像サイズを調整してください。
+      キャラクター同士の身長差を再現したい場合は、画像編集ソフトで加工するか、使用しているゲーム制作エンジンの機能を利用して画像のサイズや位置を調整してください。
      </p>
      <h3>保存形式について</h3> 
       <p>
@@ -237,7 +225,8 @@
      <!-- カテゴリフィルターボタン群 -->
      <div class="gallery-filter-container">
        <button class="metal-btn filter-btn active" data-category="all" onclick="filterGallery('all')">ALL</button>
-       <button class="metal-btn filter-btn" data-category="bl" onclick="filterGallery('bl')">BL</button>
+       <button class="metal-btn filter-btn" data-category="mmss" onclick="filterGallery('mmss')">守進</button>
+       <button class="metal-btn filter-btn" data-category="snss" onclick="filterGallery('snss')">神進</button>
      </div>
 
     <!-- 画像グリッド -->
@@ -249,6 +238,10 @@
      
     <div class="gallery-item" onclick="openModal('images/susumu05.webp', '【ブレザー】猪狩進')">
      <img src="images/susumu05.webp" alt="【ブレザー】猪狩進" />
+    </div>
+     
+    <div class="gallery-item" onclick="openModal('images/pair01.webp', '【パワフェス】神童と進')">
+     <img src="images/pair01.webp" alt="【パワフェス】神童と進" />
     </div>
      
     <div class="gallery-item" onclick="openModal('images/mamoru03.webp', '【あかつき】猪狩守')">
@@ -291,13 +284,18 @@
      <img src="images/mamoru01.webp" alt="【カイザース】猪狩守" />
     </div> 
      
-    <!-- BLイラスト -->
-    <div class="gallery-item" data-category="bl" onclick="openModal('images/mmss01.webp', '【BL】守と進')">
-     <img src="images/mmss01.webp" alt="【BL】守と進" />
+    <!-- 守進 -->
+    <div class="gallery-item" data-category="mmss" onclick="openModal('images/mmss01.webp', '部活帰り')">
+     <img src="images/mmss02.webp" alt="部活帰り" />
     </div>
-
-    <div class="gallery-item" data-category="bl" onclick="openModal('images/snss01.webp', '【BL】神童と進')">
-     <img src="images/snss01.webp" alt="【BL】神童と進" />
+     
+    <div class="gallery-item" data-category="mmss" onclick="openModal('images/mmss01.webp', 'キスする数秒前')">
+     <img src="images/mmss01.webp" alt="キスする数秒前" />
+    </div>
+     
+    <!-- 神進 -->
+    <div class="gallery-item" data-category="snss" onclick="openModal('images/snss01.webp', 'ロッカールームで')">
+     <img src="images/snss01.webp" alt="ロッカールームで" />
     </div>
 
     </div>
