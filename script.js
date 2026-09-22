@@ -175,8 +175,9 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// スクリプト読込時に即時実行する
-filterGallery('all');
+window.addEventListener('DOMContentLoaded', () => {
+  filterGallery('all');
+});
 
 /* =========================================================
    5. 素材配布 手動スライダー (キャラクター別)
