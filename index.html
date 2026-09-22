@@ -102,8 +102,8 @@
      </h3>
      <ul class="news-list">
       <li class="news-item">
-       <span class="news-date"> 2026.09.22 </span>
-       <span class="news-text"> サイトを開設しました </span>
+       <span class="news-date"> 2026.09.23 </span>
+       <span class="news-text"> サイトを公開しました </span>
       </li>
      </ul>
     </div>
@@ -145,7 +145,10 @@
        </div>
       </li>
       <li>
-       画像の軽度な加工（サイズ変更、色味変更、トリミングしてバストアップ絵や顔アイコンにする、画像を反転させて使用する際にアシンメトリーになっているパーツを編集する等）
+       画像の軽度な加工
+       <div class="terms-note">
+        ※サイズ変更、手足などの見切れている部位を書き足す、トリミングしてバストアップ絵やアイコンにする、画像を反転させて使用する際にロゴなどの位置を編集する等。
+       </div>
       </li>
      </ul>
      <h3>許可していないこと</h3>
@@ -232,16 +235,16 @@
     <!-- 画像グリッド -->
     <div class="gallery-grid">
      
+    <div class="gallery-item" onclick="openModal('images/susumu07.webp', '【パワアド】ススム')">
+     <img src="images/susumu07.webp" alt="【パワアド】ススム" />
+    </div>
+     
     <div class="gallery-item" onclick="openModal('images/susumu06.webp', '【私服】猪狩進')">
      <img src="images/susumu06.webp" alt="【私服】猪狩進" />
     </div>
      
     <div class="gallery-item" onclick="openModal('images/susumu05.webp', '【ブレザー】猪狩進')">
      <img src="images/susumu05.webp" alt="【ブレザー】猪狩進" />
-    </div>
-     
-    <div class="gallery-item" onclick="openModal('images/pair01.webp', '【パワフェス】神童と進')">
-     <img src="images/pair01.webp" alt="【パワフェス】神童と進" />
     </div>
      
     <div class="gallery-item" onclick="openModal('images/mamoru03.webp', '【あかつき】猪狩守')">
@@ -283,19 +286,15 @@
     <div class="gallery-item" onclick="openModal('images/mamoru01.webp', '【カイザース】猪狩守')">
      <img src="images/mamoru01.webp" alt="【カイザース】猪狩守" />
     </div> 
-     
-    <!-- 守進 -->
-    <div class="gallery-item" data-category="mmss" onclick="openModal('images/mmss01.webp', '部活帰り')">
-     <img src="images/mmss02.webp" alt="部活帰り" />
+
+    <!-- 守進-->
+    <div class="gallery-item hide" data-category="mmss" onclick="openModal('images/mmss01.webp', '部活帰り')">
+      <img src="images/mmss01.webp" alt="部活帰り" />
     </div>
-     
-    <div class="gallery-item" data-category="mmss" onclick="openModal('images/mmss01.webp', 'キスする数秒前')">
-     <img src="images/mmss01.webp" alt="キスする数秒前" />
-    </div>
-     
+
     <!-- 神進 -->
-    <div class="gallery-item" data-category="snss" onclick="openModal('images/snss01.webp', 'ロッカールームで')">
-     <img src="images/snss01.webp" alt="ロッカールームで" />
+    <div class="gallery-item hide" data-category="snss" onclick="openModal('images/snss01.webp', 'ロッカールームで')">
+      <img src="images/snss01.webp" alt="ロッカールームで" />
     </div>
 
     </div>
@@ -507,8 +506,8 @@
      <div style="margin-bottom: 1.5rem">
       <h4>使用しているツール一覧</h4>
       <ul style="list-style-type: square; padding-left: 1.2rem; color: var(--text-sub); margin-top: 0.5rem">
-       <li>画像生成: PixAI / Days AI</li>
-       <li>加工・補正: FireAlpaca / Gemini</li>
+       <li>画像生成: Gemini / copilot / PixAI / Days AI</li>
+       <li>加工・補正: FireAlpaca</li>
        <li>Web制作: Phoenix Code</li>
       </ul>
      </div>
@@ -576,7 +575,7 @@
   
   <!-- フッター -->
   <footer>
-   <p>© Glis Studio / okojo All Rights Reserved. / ⓒKonami Digital Entertainment</p>
+   <p>ⓒGlis Studio / okojo All Rights Reserved. / ⓒKonami Digital Entertainment</p>
   </footer>
   
   <!-- JavaScript制御 -->
