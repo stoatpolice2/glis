@@ -91,7 +91,7 @@ function initGalleryData() {
   });
 }
 
-const hiddenInAllCategories = ['bl', 'sensitive'];
+const hiddenInAllCategories = ['mmss', 'snss'];
 
 function filterGallery(category) {
   activeCategory = category;
@@ -175,9 +175,8 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-  filterGallery('all');
-});
+// スクリプト読込時に即時実行する
+filterGallery('all');
 
 /* =========================================================
    5. 素材配布 手動スライダー (キャラクター別)
