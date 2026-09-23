@@ -206,3 +206,27 @@ function moveAssetSlide(charId, direction) {
 
   track.style.transform = `translateX(-${assetPositions[charId] * itemWidth}px)`;
 }
+
+/* =========================================================
+   ページトップへ戻るボタンの制御
+   ========================================================= */
+const pageTopBtn = document.getElementById('js-pagetop');
+
+if (pageTopBtn) {
+  // スクロール位置に応じてボタンの表示/非表示を切り替え (200px以上スクロールで表示)
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      pageTopBtn.classList.add('show');
+    } else {
+      pageTopBtn.classList.remove('show');
+    }
+  });
+
+  // クリック時にスムーズスクロールでページ先頭へ移動
+  pageTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}

@@ -1,6 +1,11 @@
       /* =========================================================
        1. 基本設定・メタリックカラー定義
        ========================================================= */
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     :root {
       --bg-color: #080c14;
       --card-bg: rgba(16, 24, 40, 0.75);
@@ -71,13 +76,30 @@
        2. ヘッダー & ナビゲーションバー
        ========================================================= */
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      width: 100%;
       z-index: 1000;
-      background: rgba(8, 12, 20, 0.9);
+      background: rgba(8, 12, 20, 0.92); /* 背景をやや濃くして重なり時の視認性を向上 */
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border-color);
-      box-shadow: 0 4px 20px rgba(0, 210, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    /* ヘッダーが固定された分、メインコンテンツが上に潜り込まないよう余白を確保 */
+    main {
+      max-width: 1200px;
+      margin: 5rem auto 2rem auto;
+      padding: 0 1.5rem;
+      flex: 1;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        margin-top: 4.5rem; /* スマホ時のヘッダー高に合わせて余白を微調整 */
+      }
     }
 
     .nav-container {
@@ -898,5 +920,49 @@ a .site-banner-img:hover {
 
   .search-engine-list {
     justify-content: center;
+  }
+}
+
+/* =========================================================
+   ページトップへ戻るボタン
+   ========================================================= */
+.pagetop-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 990;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%; /* 丸型 */
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 10px rgba(0, 210, 255, 0.3);
+}
+
+/* スクロール時に表示される状態 */
+.pagetop-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pagetop-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px var(--accent-blue);
+}
+
+/* スマホ用のサイズ・位置調整 */
+@media (max-width: 768px) {
+  .pagetop-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    font-size: 0.75rem;
   }
 }
