@@ -170,10 +170,16 @@
        ========================================================= */
     main {
       max-width: 1200px;
-      margin: 2rem auto;
+      margin: 5.5rem auto 2rem auto; /* 固定ヘッダーの高さ分、上部に余白を確保 */
       padding: 0 1.5rem;
       flex: 1;
       width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        margin-top: 5rem; /* スマホ時の上部余白 */
+      }
     }
 
     .content-section {
@@ -930,7 +936,7 @@ a .site-banner-img:hover {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  z-index: 990;
+  z-index: 9999; /* モーダル等よりも前面に表示されるよう数値を大きく指定 */
   width: 48px;
   height: 48px;
   border-radius: 50%; /* 丸型 */
@@ -941,7 +947,8 @@ a .site-banner-img:hover {
   font-size: 0.85rem;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  pointer-events: none; /* 非表示時はクリック判定を無効化 */
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 10px rgba(0, 210, 255, 0.3);
 }
 
@@ -949,6 +956,7 @@ a .site-banner-img:hover {
 .pagetop-btn.show {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto; /* 表示時はクリックを有効化 */
 }
 
 .pagetop-btn:hover {
@@ -965,4 +973,12 @@ a .site-banner-img:hover {
     height: 42px;
     font-size: 0.75rem;
   }
+}
+
+/* ページ内リンク（#ID）移動時に固定ヘッダー分の余白を空ける設定 */
+.process-article,
+.process-step,
+.card[id],
+section[id] {
+  scroll-margin-top: 80px;
 }

@@ -1,4 +1,20 @@
 /* =========================================================
+   0. 共通便利関数（ページトップへ戻るボタンの表示判定）
+   ========================================================= */
+const pageTopBtn = document.getElementById('js-pagetop');
+
+  // ボタンの表示/非表示を判定する関数
+function checkPageTopBtn() {
+  if (!pageTopBtn) return;
+  // ★ 100px 以上スクロールで表示
+  if (window.scrollY > 100) {
+    pageTopBtn.classList.add('show');
+  } else {
+    pageTopBtn.classList.remove('show');
+  }
+}
+
+/* =========================================================
    1. セクション切り替え & ハッシュ制御
    ========================================================= */
 const navLinks = document.querySelectorAll('.nav-link');
@@ -17,6 +33,10 @@ function switchSection(targetId) {
   }
 
   if (navMenu) navMenu.classList.remove('open');
+
+  // セクション切替時にページ先頭へスクロールし、TOPボタンの状態を更新
+  window.scrollTo(0, 0);
+  checkPageTopBtn();
 }
 
 navLinks.forEach(link => {
@@ -208,19 +228,11 @@ function moveAssetSlide(charId, direction) {
 }
 
 /* =========================================================
-   ページトップへ戻るボタンの制御
+   6. ページトップへ戻るボタンのイベント登録
    ========================================================= */
-const pageTopBtn = document.getElementById('js-pagetop');
-
 if (pageTopBtn) {
-  // スクロール位置に応じてボタンの表示/非表示を切り替え (200px以上スクロールで表示)
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      pageTopBtn.classList.add('show');
-    } else {
-      pageTopBtn.classList.remove('show');
-    }
-  });
+  // スクロール時に表示切り替え
+  window.addEventListener('scroll', checkPageTopBtn);
 
   // クリック時にスムーズスクロールでページ先頭へ移動
   pageTopBtn.addEventListener('click', () => {
