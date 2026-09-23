@@ -44,6 +44,9 @@
       <a class="nav-link" data-target="assets"> ASSETS </a>
      </li>
      <li>
+      <a class="nav-link" data-target="process"> PROCESS </a>
+     </li>
+     <li>
       <a class="nav-link" data-target="profile"> PROFILE </a>
      </li>
     </ul>
@@ -58,24 +61,24 @@
     <div class="hero-slider-container">
      <div class="hero-slider-track" id="js-hero-track">
       <div class="hero-slide">
-       <img alt="ピックアップ作品1" src="images/susumu01.webp" />
+       <img alt="ピックアップ作品1" src="images/pair01.webp" />
        <div class="hero-caption">
         <h3>Featured Work #01</h3>
+        <p>【あかつき】猪狩兄弟</p>
+       </div>
+      </div>
+      <div class="hero-slide">
+       <img alt="ピックアップ作品2" src="images/susumu01.webp" />
+       <div class="hero-caption">
+        <h3>Featured Work #02</h3>
         <p>【カイザース】猪狩進</p>
        </div>
       </div>
       <div class="hero-slide">
-       <img alt="ピックアップ作品2" src="images/susumu03.webp" />
-       <div class="hero-caption">
-        <h3>Featured Work #02</h3>
-        <p>【オリックス】猪狩進</p>
-       </div>
-      </div>
-      <div class="hero-slide">
-       <img alt="ピックアップ作品3" src="images/susumu04.webp" />
+       <img alt="ピックアップ作品3" src="images/susumu05.webp" />
        <div class="hero-caption">
         <h3>Featured Work #03</h3>
-        <p>【ブレザー】猪狩進</p>
+        <p>【パワアド】ススム</p>
        </div>
       </div>
      </div>
@@ -102,7 +105,7 @@
      </h3>
      <ul class="news-list">
       <li class="news-item">
-       <span class="news-date"> 2026.09.23 </span>
+       <span class="news-date"> 2026.09.24 </span>
        <span class="news-text"> サイトを公開しました </span>
       </li>
      </ul>
@@ -235,16 +238,12 @@
     <!-- 画像グリッド -->
     <div class="gallery-grid">
      
-    <div class="gallery-item" onclick="openModal('images/susumu07.webp', '【パワアド】ススム')">
-     <img src="images/susumu07.webp" alt="【パワアド】ススム" />
+    <div class="gallery-item" onclick="openModal('images/pair01.webp', '【あかつき】猪狩兄弟')">
+     <img src="images/pair01.webp" alt="【あかつき】猪狩兄弟" />
     </div>
      
-    <div class="gallery-item" onclick="openModal('images/susumu06.webp', '【私服】猪狩進')">
-     <img src="images/susumu06.webp" alt="【私服】猪狩進" />
-    </div>
-     
-    <div class="gallery-item" onclick="openModal('images/susumu05.webp', '【ブレザー】猪狩進')">
-     <img src="images/susumu05.webp" alt="【ブレザー】猪狩進" />
+    <div class="gallery-item" onclick="openModal('images/susumu05.webp', '【パワアド】ススム')">
+     <img src="images/susumu05.webp" alt="【パワアド】ススム" />
     </div>
      
     <div class="gallery-item" onclick="openModal('images/mamoru03.webp', '【あかつき】猪狩守')">
@@ -255,25 +254,25 @@
      <img src="images/shindo01.webp" alt="【レッドエンジェルス】神童裕二郎" />
     </div>
      
-    <div class="gallery-item" onclick="openModal('images/susumu04.webp', '【ブレザー】猪狩進')">
-     <img src="images/susumu04.webp" alt="【ブレザー】猪狩進" />
-    </div>
-     
     <div class="gallery-item" onclick="openModal('images/shindo02.webp', '【オリックス】神童裕二郎')">
      <img src="images/shindo02.webp" alt="【オリックス】神童裕二郎" />
+    </div> 
+     
+    <div class="gallery-item" onclick="openModal('images/susumu04.webp', '【オリックス】猪狩進')">
+     <img src="images/susumu04.webp" alt="【オリックス】猪狩進" />
     </div>
      
-    <div class="gallery-item" onclick="openModal('images/susumu03.webp', '【オリックス】猪狩進')">
-     <img src="images/susumu03.webp" alt="【オリックス】猪狩進" />
-    </div>
-     
-    <div class="gallery-item" onclick="openModal('images/susumu02.webp', '【ブレザー】猪狩進')">
-     <img src="images/susumu02.webp" alt="【ブレザー】猪狩進" />
+    <div class="gallery-item" onclick="openModal('images/susumu03.webp', '【ブレザー】猪狩進')">
+     <img src="images/susumu03.webp" alt="【ブレザー】猪狩進" />
     </div>
      
     <div class="gallery-item" onclick="openModal('images/mamoru02.webp', '【ブレザー】猪狩守')">
      <img src="images/mamoru02.webp" alt="【ブレザー】猪狩守" />
     </div>
+    
+    <div class="gallery-item" onclick="openModal('images/susumu02.webp', '【ブレザー】猪狩進')">
+     <img src="images/susumu02.webp" alt="【ブレザー】猪狩進" />
+    </div> 
      
     <div class="gallery-item" onclick="openModal('images/tomozawa01.webp', '【カイザース】友沢亮')">
      <img src="images/tomozawa01.webp" alt="【カイザース】友沢亮" />
@@ -484,7 +483,274 @@
     </div>
    </section>
 
-   <!-- 5. PROFILE -->
+   <!-- 5. PROCESS -->
+   <section class="content-section" id="process">
+    <h2 class="section-title">PROCESS</h2>
+    
+    <div class="card">
+     <p>このページでは、管理人が生成AIを使用して画像を作成するまでの工程を解説しています。</p>
+    </div>
+
+    <!-- ページ内リンク目次 -->
+    <div class="card process-toc">
+     <h3>INDEX</h3>
+     <ul>
+      <li><a href="#article-gemini-pixai">Gemini×PixAIでゲームの立ち絵を生成する</a></li>
+      <li><a href="#article-Copilot">Copilotが生成した画像を元に1枚絵を作る</a></li>
+      <li><a href="#article-daysai">Days AIで作成したキャラを任意のキャラに寄せる</a></li>
+     </ul>
+    </div>
+
+    <!-- 記事ブロック① -->
+    <article class="card process-article" id="article-gemini-pixai">
+     <h3 class="process-article-title">Gemini×PixAIでゲームの立ち絵を生成する</h3>
+
+    <!-- 工程① -->
+     <div class="process-step">
+      <h4 class="process-step-title">工程①：プロンプトの抽出</h4>
+      <div class="process-step-body">
+       <div class="process-step-img-wrapper">
+        <div class="process-step-img">
+         <img src="images/process01.webp" alt="プロンプト抽出に使用した自作絵" />
+        </div>
+        <p class="process-img-caption">▲ プロンプト抽出に使用した自作絵</p>
+       </div>       
+       <div class="process-step-text">
+        <p>
+         自分で作画したキャラクターの画像をGeminiのチャットに添付し、<strong>「添付画像のキャラクターをPixAIで作成するためのプロンプトを教えてください。ゲームの立ち絵として使用したいので、背景は白色にしてください」</strong>といった要望を入力して送信します。<br />
+         すると、Geminiがプロンプトに加えて「こういう画像を作成したい場合はこうするといいよ」といったアドバイスを教えてくれます。
+        </p>
+        <!-- 注釈 -->
+        <div class="process-note">
+         <h5>「Gemini」「PixAI」とは</h5>
+         <p>
+          「Gemini」はGoogleが開発・提供するマルチモーダル（複数の情報形式）に対応した対話型のAIです。<br />
+          「PixAI」はテキスト（プロンプト）やラフ画から高画質なアニメ調の画像を生成できるAI画像生成プラットフォームです。
+        </p>
+        </div> 
+       </div>
+      </div>
+     </div>
+     
+     <!-- 工程②-->
+     <div class="process-step">
+      <h4 class="process-step-title">工程②：画像の出力</h4>
+      <div class="process-step-body">
+       <div class="process-step-img-wrapper">
+        <div class="process-step-img">
+         <img src="images//process02.webp" alt="プロンプトを元にPixAIが生成した画像" />
+        </div>
+        <p class="process-img-caption">▲ プロンプトを元にPixAIが生成した画像</p>
+       </div>
+       <div class="process-step-text">
+        <p>
+         Geminiが出力したプロンプトをコピーし、PixAIの入力欄に入力して送信します。<br />
+         ※工程①で使用したプロンプトの元画像ではキャラクターが汗をかいているので、Geminiが出力したプロンプトにも「sweat」などが含まれています。今回作成したい画像に汗は不要のため、画像を出力する前に削除しておきました。<br />
+         PixAIのモデルは個人的な好みから「Tsubaki.2」を選択。立ち絵として使用するため、画像サイズは縦長の「3:5（デフォルト値）」にしています。
+        </p>
+        <!-- 注釈 -->
+        <div class="process-note">
+         <h5>ネガティブプロンプト（除外したい要素）について</h5>
+         <p>
+          AIに画像を作成してもらうときは、通常のプロンプトに加えて「ネガティブプロンプト」を指定しておくことで、よりイメージに近い画像が生成できるようになります。<br />
+          PixAIでネガティブプロンプトを指定したい場合は、モードを「プロ」以上にしたのちに、「詳細設定」から指定することでネガティブプロンプトが適用されます。
+        </p>
+        </div>
+       </div>
+      </div>
+     </div>
+
+     <!-- 工程③ -->
+     <div class="process-step">
+      <h4 class="process-step-title">工程③：画像の編集</h4>
+      <div class="process-step-body">
+       <div class="process-step-img-wrapper">
+        <div class="process-step-img">
+         <img src="assets/webp/tomozawa01.webp" alt="完成画像" />
+        </div>
+        <p class="process-img-caption">▲ 完成画像</p>
+       </div>
+       <div class="process-step-text">
+        <p>
+         PixAIが出力した画像をGeminiのチャットに添付し、「ユニフォー厶のロゴを『KAISERS』にしてください」「腕を組んだポーズにしてください」といった細部の編集をしてもらいます。<br />
+         最後にペイントソフト（Fire Alpaca）で背景を透過させて画像のような立ち絵が完成しました。
+        </p>
+       </div>
+      </div>
+     </div>
+    </article>
+
+    <!-- 記事ブロック② -->
+    <article class="card process-article" id="article-Copilot">
+     <h3 class="process-article-title">Copilotが生成した画像を元に1枚絵を作る</h3>
+
+    <!-- 工程① -->
+     <div class="process-step">
+      <h4 class="process-step-title">工程①：プロンプトから画像を生成する</h4>
+      <div class="process-step-body">
+       <div class="process-step-img-wrapper">
+        <div class="process-step-img">
+         <img src="images/process03.webp" alt="プロンプトを元にCopilotが作成した画像" />
+        </div>
+        <p class="process-img-caption">▲ プロンプトを元にCopilotが作成した画像</p>
+       </div>       
+       <div class="process-step-text">
+        <p>
+         まず、Copilotに「6〜7頭身のアニメ風の少年キャラのイラストを作成してください。パステルカラー、または水彩画風の柔らかいタッチで描いてください。ふんわりした雰囲気で、優しい表情でお願いします。火属性の僧侶という設定なので、手のひらに小さな炎の魔法を灯したポーズにしてください。ゆらめく炎のエフェクトを淡い赤・オレンジ・金色で表現すしてください。炎の光が髪や頬に柔らかく反射する様子を描いてください。」といった要望を入力して送信します。<br />
+         その要望を元にCopilotが作成した「オリジナルの火属性僧侶の少年」が画像のイラストになります。
+        </p>
+        <!-- 注釈 -->
+        <div class="process-note">
+         <h5>Copilotとは</h5>
+         <p>
+          「Copilot」は、Microsoftが提供する生成AIの総称です。ここではWindows11に標準搭載されている無料版を使用しています。
+        </div>
+       </div>
+      </div>
+     </div>
+     
+     <!-- 工程②-->
+     <div class="process-step">
+      <h4 class="process-step-title">工程②：キャラクターの変換</h4>
+      <div class="process-step-body">
+       <div class="process-step-img-wrapper">
+        <div class="process-step-img">
+         <img src="images//process04.webp" alt="参考画像として使用した自作絵" />
+        </div>
+        <p class="process-img-caption">▲ 参考画像として使用した自作絵</p>
+       </div>
+       <div class="process-step-text">
+        <p>
+         次に自作したススムのイラストを画像1、先ほどCopilotが作成した画像を画像2としてチャットに添付し、「画像1のキャラクターのポーズや画風を、画像2のようにしてください」と入力して送信します。
+        </p>
+        </div>
+       </div>
+      </div>
+
+     <!-- 工程③ -->
+     <div class="process-step">
+      <h4 class="process-step-title">工程③：画像の編集</h4>
+      <div class="process-step-body">
+       <div class="process-step-img-wrapper">
+        <div class="process-step-img">
+         <img src="images/susumu05.webp" alt="完成画像" />
+        </div>
+        <p class="process-img-caption">▲ 完成画像</p>
+       </div>
+       <div class="process-step-text">
+        <p>
+         ②の返信でCopilotが作成した画像がこちら。<br />
+         実際は「絆創膏がついていない」「片手にだけ手袋をはめている」など、違和感がある部位があったため細部は編集しています。
+        </p>
+        <!-- 注釈 -->
+        <div class="process-note">
+         <h5>AIが画像に挿入するマークは削除してもOK！</h5>
+         <p>
+          GeminiやCopilotが作成した画像には「各AIのマーク（透かし）」が挿入されますが、これは著作権表記ではないので編集・トリミングで削除しても法的には問題ありません。<br />
+          ただし、AIが生成した画像には「電子透かし（デジタルウォーターマーク）という「目に見えない透かし」が挿入されているため、「マークを消す＝AI生成画像であることを隠匿できる」わけでないことは留意しておく必要があります。
+        </div>
+        </div> 
+       </div>
+      </div>
+    </article>
+    
+    <!-- 記事ブロック③ -->
+    <article class="card process-article" id="article-daysai">
+     <h3 class="process-article-title">Days AIで作成したキャラを任意のキャラに寄せる</h3>
+
+    <!-- 工程① -->
+     <div class="process-step">
+      <h4 class="process-step-title">工程①：「うちの子」システムでそれっぽいキャラを作る</h4>
+      <div class="process-step-body">
+       <div class="process-step-img-wrapper">
+        <div class="process-step-img">
+         <img src="images/process05.webp" alt="「うちの子」機能で作成した進っぽいキャラの画像" />
+        </div>
+        <p class="process-img-caption">▲ 「うちの子」機能で作成した進っぽいキャラの画像</p>
+       </div>       
+       <div class="process-step-text">
+        <p>
+         Days AIには「うちの子」という、「特定のデザインのキャラクターを登録しておける機能」があります。<br />
+         キャラクターを作成するときは画像で表示されるパーツを選択して作成するため、プロンプトの知識は必要ありません。
+        </p>
+        <!-- 注釈 -->
+        <div class="process-note">
+         <h5>Days AI</h5>
+         <p>
+          「Days AI」は、うちの子（オリキャラ）を使ってイラスト生成やチャットを楽しめるAIイラスト・キャラクターアプリです。
+        </div>
+       </div>
+      </div>
+     </div>
+     
+     <!-- 工程②-->
+     <div class="process-step">
+      <h4 class="process-step-title">工程②：「テーマ」を使って画像を作成する</h4>
+      <div class="process-step-body">
+       <div class="process-step-img-wrapper">
+        <div class="process-step-img">
+         <img src="images//process06.webp" alt="「うちの子」と「テーマ」を使って作成した画像" />
+        </div>
+        <p class="process-img-caption">▲ 「うちの子」と「テーマ」を使って作成した画像</p>
+       </div>
+       <div class="process-step-text">
+        <p>
+         Days AIには「テーマ」という、「プロンプトのテンプレート」のような機能があります。<br />
+         見本の画像は「うちの子応援団」というテーマを使って作成しました。
+        </p>
+        <!-- 注釈 -->
+        <div class="process-note">
+         <h5>AIが苦手とするパーツはあえて設定しないのも手</h5>
+         <p>
+          進をモデルにした「うちの子」には彼の特徴である「左頬の絆創膏」をあえて設定していません（パーツ内には用意されています）<br />
+          これは「顔の絆創膏」というAIが苦手とするパーツを最初から入れておくと、出力された画像に高確率で「絆創膏が変な位置にくっついている」という状況が起こるためです。<br />
+          そのため、「Days AI」ではあえて絆創膏のない状態で画像を出力し、あとから編集で付け足しています。
+        </div>
+        </div>
+       </div>
+      </div>
+
+     <!-- 工程③ -->
+     <div class="process-step">
+      <h4 class="process-step-title">工程③：画像の変換</h4>
+      <div class="process-step-body">
+       <div class="process-step-img-wrapper">
+        <div class="process-step-img">
+         <img src="images//process07.webp" alt="参考画像として使用した自作絵" />
+        </div>
+        <p class="process-img-caption">▲ 参考画像として使用した自作絵</p>
+       </div>
+       <div class="process-step-text">
+        <p>
+         作成した画像には「絆創膏」や「ユニフォーム」など、進の特徴的なパーツが不足しているため、自作の「オリックスのユニフォームを着ている進」の画像を使用してGeminiに編集してもらいます。
+        </p>
+        </div> 
+       </div>
+      </div>
+     
+     <!-- 工程④ -->
+     <div class="process-step">
+      <h4 class="process-step-title">工程④：画像の変換</h4>
+      <div class="process-step-body">
+       <div class="process-step-img-wrapper">
+        <div class="process-step-img">
+         <img src="images/susumu04.webp" alt="完成画像" />
+        </div>
+        <p class="process-img-caption">▲ 完成画像</p>
+       </div>
+       <div class="process-step-text">
+        <p>
+         Days AIで作成した画像を画像1、自作した進のイラストを画像2としてチャットに添付し、「画像1のキャラクターの服装を、画像2のようにしてください」と入力して送信すると、このようにユニフォームを変更してくれました。<br />
+         （帽子はなんか違和感があったのであえて外しています。背番号もオリックスだと2のときもあるので27には修正していません）
+        </p>
+        </div> 
+       </div>
+      </div>
+    </article>
+
+   </section>
+
+   <!-- 6. PROFILE -->
    <section class="content-section" id="profile">
     <h2 class="section-title">PROFILE</h2>
     <div class="card">
@@ -506,7 +772,7 @@
      <div style="margin-bottom: 1.5rem">
       <h4>使用しているツール一覧</h4>
       <ul style="list-style-type: square; padding-left: 1.2rem; color: var(--text-sub); margin-top: 0.5rem">
-       <li>画像生成: Gemini / copilot / PixAI / Days AI</li>
+       <li>画像生成: Gemini / Copilot / PixAI / Days AI</li>
        <li>加工・補正: FireAlpaca</li>
        <li>Web制作: Phoenix Code</li>
       </ul>
@@ -535,7 +801,7 @@
        <div class="link-card">
         <a href="https://crepu.net/user/stoatpolice2" rel="noopener" target="_blank"> くるっぷ </a>
         <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 0.3rem">
-         AI生成イラストに関する話題をつぶやいています。
+         AI生成イラストに関する話題や画像の投稿をしています。
         </p>
        </div>
        <div class="link-card">

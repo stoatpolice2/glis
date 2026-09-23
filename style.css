@@ -646,3 +646,153 @@
         text-align: center;
       }
     }
+
+      /* =========================================================
+       7. PROCESS (制作過程解説) セクション
+       ========================================================= */
+    .process-toc h3 {
+      font-size: 1.1rem;
+      color: var(--accent-blue);
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.3rem;
+    }
+
+    .process-toc ul {
+      list-style: square;
+      padding-left: 1.2rem;
+    }
+
+    .process-toc li {
+      margin-bottom: 0.4rem;
+    }
+
+    .process-article {
+      margin-bottom: 2rem;
+    }
+
+    .process-article-title {
+      font-size: 1.4rem;
+      color: #fff;
+      border-bottom: 2px solid var(--accent-blue);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 6px rgba(0, 210, 255, 0.3);
+    }
+
+    .process-step {
+      margin-bottom: 2rem;
+      border-bottom: 1px dashed rgba(0, 210, 255, 0.2);
+      padding-bottom: 1.5rem;
+    }
+
+    .process-step:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .process-step-title {
+      font-size: 1.1rem;
+      color: var(--accent-blue);
+      margin-bottom: 0.8rem;
+    }
+
+    .process-step-body {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    /* 縦横比 3:5 の画像コンテナ設定 */
+    .process-step-img {
+      flex: 0 0 200px;
+      aspect-ratio: 2 / 3;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      background: #000;
+    }
+
+    .process-step-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .process-step-text {
+      flex: 1;
+      line-height: 1.7;
+    }
+
+    /* 注釈ブロック */
+    .process-note {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: rgba(0, 210, 255, 0.05);
+      border-left: 3px solid var(--accent-blue);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .process-note h5 {
+      color: var(--accent-blue);
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .process-note p {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+    }
+
+    /* スマートフォン表示（レスポンシブ対応） */
+    @media (max-width: 768px) {
+      .process-step-body {
+        flex-direction: column;
+      }
+
+      .process-step-img {
+        width: 100%;
+        max-width: 240px;
+        flex: none;
+        margin: 0 auto 0.8rem auto;
+      }
+    }
+
+  /* =========================================================
+   PROCESS画像キャプション用スタイル
+   ========================================================= */
+
+/* パターンA：画像の直下に表示する場合 */
+.process-step-img-wrapper {
+  flex: 0 0 200px; /* 画像の幅に合わせる */
+}
+
+/* スマホ表示時は画像エリアの幅を合わせる */
+@media (max-width: 768px) {
+  .process-step-img-wrapper {
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto 1rem auto;
+  }
+}
+
+.process-img-caption {
+  font-size: 0.8rem;
+  color: var(--text-sub);
+  text-align: center;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+
+/* パターンB：右側テキスト欄の冒頭に表示する場合 */
+.process-img-caption-inline {
+  font-size: 0.85rem;
+  color: var(--accent-blue);
+  background: rgba(0, 210, 255, 0.08);
+  border: 1px solid var(--border-color);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
