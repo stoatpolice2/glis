@@ -78,10 +78,10 @@
        </div>
       </div>
       <div class="hero-slide">
-       <img alt="ピックアップ作品3" src="images/susumu05.webp" />
+       <img alt="ピックアップ作品3" src="images/pair04.webp" />
        <div class="hero-caption">
         <h3>Featured Work #03</h3>
-        <p>【パワアド】ススム</p>
+        <p>【パワアド】マモル＆ススム</p>
        </div>
       </div>
      </div>
@@ -107,6 +107,11 @@
       NEWS &amp; HISTORY
      </h3>
      <ul class="news-list">
+      <li class="news-item">
+       <span class="news-date"> 2026.09.29 </span>
+       <span class="news-text"> GALLERYに2点追加しました <br />
+       「パワプロ」「パワアド」カテゴリを追加しました </span>
+      </li>
       <li class="news-item">
        <span class="news-date"> 2026.09.28 </span>
        <span class="news-text"> GALLERYに3点追加しました </span>
@@ -291,6 +296,8 @@
      <!-- カテゴリフィルターボタン群 -->
      <div class="gallery-filter-container">
        <button class="metal-btn filter-btn active" data-category="all" onclick="filterGallery('all')">ALL</button>
+       <button class="metal-btn filter-btn active" data-category="pwpr" onclick="filterGallery('pwpr')">パワプロ</button>
+       <button class="metal-btn filter-btn active" data-category="pwad" onclick="filterGallery('pwad')">パワアド</button>
        <button class="metal-btn filter-btn" data-category="mmss" onclick="filterGallery('mmss')">守進</button>
        <button class="metal-btn filter-btn" data-category="snss" onclick="filterGallery('snss')">神進</button>
      </div>
@@ -298,59 +305,63 @@
     <!-- 画像グリッド -->
     <div class="gallery-grid">
      
-    <div class="gallery-item" onclick="openModal('images/pair03.webp', '【パワアド】マモル＆ススム')">
+    <div class="gallery-item" data-category="pwad" onclick="openModal('images/pair04.webp', '【パワアド】マモル＆ススム')">
+     <img src="images/pair04.webp" alt="【パワアド】マモル＆ススム" />
+    </div> 
+     
+    <div class="gallery-item" data-category="pwad" onclick="openModal('images/pair03.webp', '【パワアド】マモル＆ススム')">
      <img src="images/pair03.webp" alt="【パワアド】マモル＆ススム" />
     </div>
      
-    <div class="gallery-item" onclick="openModal('images/pair04.webp', '【パワアド】マモル＆ススム')">
+    <div class="gallery-item" data-category="pwad" onclick="openModal('images/pair04.webp', '【パワアド】マモル＆ススム')">
      <img src="images/pair02.webp" alt="【パワアド】マモル＆ススム" />
     </div>
      
-    <div class="gallery-item" onclick="openModal('images/pair01.webp', '【あかつき】猪狩兄弟')">
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/pair01.webp', '【あかつき】猪狩兄弟')">
      <img src="images/pair01.webp" alt="【あかつき】猪狩兄弟" />
     </div>
      
-    <div class="gallery-item" onclick="openModal('images/susumu05.webp', '【パワアド】ススム')">
+    <div class="gallery-item" data-category="pwad" onclick="openModal('images/susumu05.webp', '【パワアド】ススム')">
      <img src="images/susumu05.webp" alt="【パワアド】ススム" />
     </div>
      
-    <div class="gallery-item" onclick="openModal('images/mamoru03.webp', '【あかつき】猪狩守')">
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/mamoru03.webp', '【あかつき】猪狩守')">
      <img src="images/mamoru03.webp" alt="【あかつき】猪狩守" />
     </div>
      
-    <div class="gallery-item" onclick="openModal('images/shindo01.webp', '【レッドエンジェルス】神童裕二郎')">
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/shindo01.webp', '【レッドエンジェルス】神童裕二郎')">
      <img src="images/shindo01.webp" alt="【レッドエンジェルス】神童裕二郎" />
     </div>
      
-    <div class="gallery-item" onclick="openModal('images/shindo02.webp', '【オリックス】神童裕二郎')">
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/shindo02.webp', '【オリックス】神童裕二郎')">
      <img src="images/shindo02.webp" alt="【オリックス】神童裕二郎" />
     </div> 
      
-    <div class="gallery-item" onclick="openModal('images/susumu04.webp', '【オリックス】猪狩進')">
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/susumu04.webp', '【オリックス】猪狩進')">
      <img src="images/susumu04.webp" alt="【オリックス】猪狩進" />
     </div>
      
-    <div class="gallery-item" onclick="openModal('images/susumu03.webp', '【ブレザー】猪狩進')">
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/susumu03.webp', '【ブレザー】猪狩進')">
      <img src="images/susumu03.webp" alt="【ブレザー】猪狩進" />
     </div>
      
-    <div class="gallery-item" onclick="openModal('images/mamoru02.webp', '【ブレザー】猪狩守')">
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/mamoru02.webp', '【ブレザー】猪狩守')">
      <img src="images/mamoru02.webp" alt="【ブレザー】猪狩守" />
     </div>
     
-    <div class="gallery-item" onclick="openModal('images/susumu02.webp', '【ブレザー】猪狩進')">
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/susumu02.webp', '【ブレザー】猪狩進')">
      <img src="images/susumu02.webp" alt="【ブレザー】猪狩進" />
     </div> 
      
-    <div class="gallery-item" onclick="openModal('images/tomozawa01.webp', '【カイザース】友沢亮')">
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/tomozawa01.webp', '【カイザース】友沢亮')">
      <img src="images/tomozawa01.webp" alt="【カイザース】友沢亮" />
     </div>
      
-    <div class="gallery-item" onclick="openModal('images/susumu01.webp', '【カイザース】猪狩進')">
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/susumu01.webp', '【カイザース】猪狩進')">
      <img src="images/susumu01.webp" alt="【カイザース】猪狩進" />
     </div>
 
-    <div class="gallery-item" onclick="openModal('images/mamoru01.webp', '【カイザース】猪狩守')">
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/mamoru01.webp', '【カイザース】猪狩守')">
      <img src="images/mamoru01.webp" alt="【カイザース】猪狩守" />
     </div> 
 
@@ -364,6 +375,10 @@
     </div>
 
     <!-- 神進 -->
+    <div class="gallery-item hide" data-category="snss" onclick="openModal('images/snss02.webp', 'オフの日')">
+      <img src="images/snss02.webp" alt="オフの日" />
+    </div> 
+     
     <div class="gallery-item hide" data-category="snss" onclick="openModal('images/snss01.webp', 'ロッカールームで')">
       <img src="images/snss01.webp" alt="ロッカールームで" />
     </div>
