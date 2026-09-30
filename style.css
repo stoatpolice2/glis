@@ -267,6 +267,32 @@
     }
 
     /* ----- 更新履歴 (NEWS) ----- */
+    .news-scroll-container {
+      max-height: 150px; /* 高さ（表示領域） */
+      overflow-y: auto;  /* 中身が指定の高さを超えた場合に縦スクロールバーを表示 */
+      padding-right: 0.5rem; /* スクロールバーとテキストの重なりを防ぐ余白 */
+    }
+
+    /* NEWSエリアのスクロールバーデザイン（WebKit系ブラウザ対応） */
+    .news-scroll-container::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .news-scroll-container::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 3px;
+    }
+
+    .news-scroll-container::-webkit-scrollbar-thumb {
+      background: var(--accent-blue);
+      border-radius: 3px;
+      box-shadow: 0 0 5px var(--accent-blue);
+    }
+
+    .news-scroll-container::-webkit-scrollbar-thumb:hover {
+      background: #fff;
+    }
+
     .news-list {
       list-style: none;
     }

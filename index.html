@@ -106,21 +106,29 @@
       ">
       NEWS &amp; HISTORY
      </h3>
-     <ul class="news-list">
-      <li class="news-item">
-       <span class="news-date"> 2026.09.29 </span>
-       <span class="news-text"> GALLERYに2点追加しました </span>
-      </li>
-      <li class="news-item">
-       <span class="news-date"> 2026.09.28 </span>
-       <span class="news-text"> GALLERYに3点追加しました </span>
-      </li>
-      <li class="news-item">
-       <span class="news-date"> 2026.09.24 </span>
-       <span class="news-text"> サイトを公開しました </span>
-      </li>
-     </ul>
+     <!-- スクリプト用・スクロール用コンテナ -->
+     <div class="news-scroll-container">
+      <ul class="news-list">
+       <li class="news-item">
+        <span class="news-date"> 2026.10.01 </span>
+        <span class="news-text"> GALLERYに2点追加しました </span>
+       </li>
+       <li class="news-item">
+        <span class="news-date"> 2026.09.29 </span>
+        <span class="news-text"> GALLERYに2点追加しました </span>
+       </li>
+       <li class="news-item">
+        <span class="news-date"> 2026.09.28 </span>
+        <span class="news-text"> GALLERYに3点追加しました </span>
+       </li>
+       <li class="news-item">
+        <span class="news-date"> 2026.09.24 </span>
+        <span class="news-text"> サイトを公開しました </span>
+       </li>
+      </ul>
+     </div>
     </div>
+    
     <!-- LINK -->
     <div class="card">
      <h3
@@ -303,6 +311,14 @@
 
     <!-- 画像グリッド -->
     <div class="gallery-grid">
+     
+    <div class="gallery-item" data-category="pwad" onclick="openModal('images/pair06.webp', '【パワアド】マモル＆ススム')">
+     <img src="images/pair06.webp" alt="【パワアド】マモル＆ススム" />
+    </div> 
+     
+    <div class="gallery-item" data-category="pwad" onclick="openModal('images/pair05.webp', '【パワアド】マモル＆ススム')">
+     <img src="images/pair05.webp" alt="【パワアド】マモル＆ススム" />
+    </div>
      
     <div class="gallery-item" data-category="pwad" onclick="openModal('images/pair04.webp', '【パワアド】マモル＆ススム')">
      <img src="images/pair04.webp" alt="【パワアド】マモル＆ススム" />
@@ -932,7 +948,7 @@
   
   <!-- フッター -->
   <footer>
-   <p>ⓒGlis Studio / okojo All Rights Reserved. / ⓒKonami Digital Entertainment</p>
+   <p>&copy; Glis Studio / okojo All Rights Reserved. / ⓒKonami Digital Entertainment</p>
   </footer>
   
   <!-- JavaScript制御 -->
