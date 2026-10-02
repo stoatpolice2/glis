@@ -90,7 +90,7 @@
      <h2>Welcome to Glis Studio</h2>
      <p style="margin-top: 0.5rem; color: var(--text-sub)">
       当サイトは生成AIを利用して制作した二次創作イラストを展示・配布している個人サイトです<br />
-      作品の中にはBL要素を含むものもあります（※カテゴリを分けて展示しています）<br />
+      作品の中にはBL要素を含むものもあります（カテゴリを分けて展示しています）<br />
       主にパワフルプロ野球シリーズの猪狩進くんを愛でています
      </p>
     </div>
@@ -109,6 +109,10 @@
      <!-- スクリプト用・スクロール用コンテナ -->
      <div class="news-scroll-container">
       <ul class="news-list">
+       <li class="news-item">
+        <span class="news-date"> 2026.10.03 </span>
+        <span class="news-text"> GALLERYに5点追加しました </span>
+       </li> 
        <li class="news-item">
         <span class="news-date"> 2026.10.01 </span>
         <span class="news-text"> GALLERYに2点追加しました </span>
@@ -310,7 +314,23 @@
      </div>
 
     <!-- 画像グリッド -->
-    <div class="gallery-grid">
+    <div class="gallery-grid"> 
+     
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('imagessusumu07.webp', '【私服】猪狩進')">
+     <img src="images/susumu07.webp" alt="【私服】猪狩進" />
+    </div>
+     
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/pair08.webp', '【あかつき】猪狩兄弟')">
+     <img src="images/pair08.webp" alt="【あかつき】猪狩兄弟" />
+    </div>
+     
+    <div class="gallery-item" data-category="pwad" onclick="openModal('images/susumu06.webp', '【パワアド】ススム')">
+     <img src="images/susumu06.webp" alt="【パワアド】ススム" />
+    </div> 
+     
+    <div class="gallery-item" data-category="pwad" onclick="openModal('images/pair07.webp', '【パワアド】マモル＆ススム')">
+     <img src="images/pair07.webp" alt="【パワアド】マモル＆ススム" />
+    </div>  
      
     <div class="gallery-item" data-category="pwad" onclick="openModal('images/pair06.webp', '【パワアド】マモル＆ススム')">
      <img src="images/pair06.webp" alt="【パワアド】マモル＆ススム" />
@@ -381,6 +401,10 @@
     </div> 
 
     <!-- 守進-->
+    <div class="gallery-item hide" data-category="mmss" onclick="openModal('images/mmss03.webp', '【パワアド】慈しむ')">
+      <img src="images/mmss03.webp" alt="【パワアド】慈しむ" />
+    </div> 
+     
     <div class="gallery-item hide" data-category="mmss" onclick="openModal('images/mmss02.webp', '【パワアド】密会')">
       <img src="images/mmss02.webp" alt="【パワアド】密会" />
     </div> 
