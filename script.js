@@ -85,25 +85,30 @@ if (heroTrack && heroSlides.length > 0) {
 }
 
 /* =========================================================
-   4. ギャラリー フィルター & モーダル拡大表示
+   4. ギャラリー & LOGS フィルター & モーダル拡大表示
    ========================================================= */
 const modal = document.getElementById('js-modal');
 const modalImg = document.getElementById('js-modal-img');
 const modalTitle = document.getElementById('js-modal-title');
 
-let galleryItems = [];
-let currentGalleryIndex = 0;
-let activeCategory = 'all';
+let activeModalItems = []; // 現在開いているセクション（GALLERYまたはLOGS）の画像リスト
+let currentModalIndex = 0;
 
-function initGalleryData() {
-  const items = document.querySelectorAll('.gallery-grid .gallery-item:not(.hide)');
-  galleryItems = Array.from(items).map(item => {
+// 現在表示されているセクションの画像データを初期化・取得
+function initActiveModalData() {
+  // 現在アクティブなセクションを取得
+  const activeSection = document.querySelector('.content-section.active');
+  if (!activeSection) return;
+
+  // GALLERYまたはLOGS内の「非表示(hide)になっていないアイテム」を取得
+  const items = activeSection.querySelectorAll('.gallery-grid .gallery-item:not(.hide), .corkboard-grid .scrap-item:not(.hide)');
+  
+  activeModalItems = Array.from(items).map(item => {
     const img = item.querySelector('img');
     const onclickAttr = item.getAttribute('onclick') || '';
     const matches = onclickAttr.match(/openModal\('(.*?)'\s*,\s*'(.*?)'\)/);
 
     return {
-      // 比較用に相対パスのまま保持
       rawSrc: matches ? matches[1] : '',
       src: img ? img.src : (matches ? matches[1] : ''),
       title: matches ? matches[2] : (img ? img.alt : 'Untitled')
@@ -111,21 +116,15 @@ function initGalleryData() {
   });
 }
 
+// GALLERY用 フィルター
 const hiddenInAllCategories = ['mmss', 'snss'];
 
 function filterGallery(category) {
-  activeCategory = category;
-  const items = document.querySelectorAll('.gallery-grid .gallery-item');
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('#gallery .gallery-item');
+  const filterBtns = document.querySelectorAll('#gallery .filter-btn');
 
-  // ボタンアクティブ状態の確実な切り替え
   filterBtns.forEach(btn => {
-    const btnCategory = btn.getAttribute('data-category');
-    if (btnCategory === category) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
-    }
+    btn.classList.toggle('active', btn.getAttribute('data-category') === category);
   });
 
   items.forEach(item => {
@@ -133,36 +132,56 @@ function filterGallery(category) {
 
     if (category === 'all') {
       const hasHiddenCategory = itemCategories.some(cat => hiddenInAllCategories.includes(cat));
-      if (hasHiddenCategory) {
-        item.classList.add('hide');
-      } else {
-        item.classList.remove('hide');
-      }
+      item.classList.toggle('hide', hasHiddenCategory);
     } else {
-      if (itemCategories.includes(category)) {
-        item.classList.remove('hide');
-      } else {
-        item.classList.add('hide');
-      }
+      item.classList.toggle('hide', !itemCategories.includes(category));
     }
   });
 
-  initGalleryData();
+  initActiveModalData();
 }
 
+// LOGS用 フィルター
+const hiddenInLogsAllCategories = ['mmss', 'snss'];
+
+function filterLogs(category) {
+  const items = document.querySelectorAll('#logs .scrap-item');
+  const filterBtns = document.querySelectorAll('#logs .filter-btn');
+
+  filterBtns.forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-category') === category);
+  });
+
+  items.forEach(item => {
+    const itemCategories = (item.getAttribute('data-category') || '').split(' ').filter(Boolean);
+
+    if (category === 'all') {
+      // ALL選択時：隠す対象カテゴリが含まれているか判定
+      const hasHiddenCategory = itemCategories.some(cat => hiddenInLogsAllCategories.includes(cat));
+      item.classList.toggle('hide', hasHiddenCategory);
+    } else {
+      // 特定カテゴリ選択時：該当カテゴリがあれば表示
+      item.classList.toggle('hide', !itemCategories.includes(category));
+    }
+  });
+
+  initActiveModalData();
+}
+
+// モーダル表示処理
 function openModalByIndex(index) {
-  if (galleryItems.length === 0) initGalleryData();
-  if (galleryItems.length === 0) return;
+  initActiveModalData();
+  if (activeModalItems.length === 0) return;
 
   if (index < 0) {
-    currentGalleryIndex = galleryItems.length - 1;
-  } else if (index >= galleryItems.length) {
-    currentGalleryIndex = 0;
+    currentModalIndex = activeModalItems.length - 1;
+  } else if (index >= activeModalItems.length) {
+    currentModalIndex = 0;
   } else {
-    currentGalleryIndex = index;
+    currentModalIndex = index;
   }
 
-  const currentItem = galleryItems[currentGalleryIndex];
+  const currentItem = activeModalItems[currentModalIndex];
   if (currentItem && modal && modalImg && modalTitle) {
     modalImg.src = currentItem.src;
     modalTitle.textContent = currentItem.title;
@@ -171,16 +190,15 @@ function openModalByIndex(index) {
 }
 
 function openModal(imgSrc, titleText) {
-  initGalleryData();
-  // 絶対パス・相対パスの両方でマッチング処理
-  const index = galleryItems.findIndex(item => {
+  initActiveModalData();
+  const index = activeModalItems.findIndex(item => {
     return item.rawSrc === imgSrc || item.src.endsWith(imgSrc) || item.src === imgSrc;
   });
   openModalByIndex(index !== -1 ? index : 0);
 }
 
 function changeModalImage(step) {
-  openModalByIndex(currentGalleryIndex + step);
+  openModalByIndex(currentModalIndex + step);
 }
 
 function closeModal() {
@@ -197,8 +215,8 @@ document.addEventListener('keydown', (e) => {
 
 window.addEventListener('DOMContentLoaded', () => {
   filterGallery('all');
+  filterLogs('all');
 });
-
 /* =========================================================
    5. 素材配布 手動スライダー (キャラクター別)
    ========================================================= */

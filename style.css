@@ -1008,3 +1008,105 @@ a .site-banner-img:hover {
 section[id] {
   scroll-margin-top: 80px;
 }
+/* =========================================================
+   LOGS (コルクボード / スクラップ風) セクション用スタイル
+   ========================================================= */
+
+/* ボード背景コンテナ */
+.corkboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 2rem 1.5rem;
+  padding: 1rem 0.5rem;
+}
+
+/* スクラップカード本体 */
+.scrap-item {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 6px 28px 6px;
+  border-radius: 2px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
+  z-index: 1;
+}
+
+/* 画像表示部分（縦横比を固定せずアスペクト維持） */
+.scrap-img-wrapper {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.scrap-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 下部の手書き風風ラベル */
+.scrap-label {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  font-size: 0.75rem;
+  color: var(--text-sub);
+  font-family: monospace, sans-serif;
+  letter-spacing: 1px;
+}
+
+/* 上部のマスキングテープ風装飾 */
+.tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 18px;
+  background: rgba(0, 210, 255, 0.25);
+  border: 1px solid rgba(0, 210, 255, 0.4);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+/* 傾きのバリエーションクラス */
+.scrap-item.rotate-l   { transform: rotate(-3.5deg); }
+.scrap-item.rotate-r   { transform: rotate(3.5deg); }
+.scrap-item.rotate-s-l { transform: rotate(-1.8deg); }
+.scrap-item.rotate-s-r { transform: rotate(2deg); }
+
+/* ホバー時にスッと正面を向き、手前に浮き出る演出 */
+.scrap-item:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 210, 255, 0.4);
+  border-color: var(--accent-blue);
+  z-index: 10;
+}
+
+/* 非表示切り替え用 */
+.scrap-item.hide {
+  display: none !important;
+}
+
+/* スマホ表示時の調整 */
+@media (max-width: 768px) {
+  .corkboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+    padding: 1.2rem 0.8rem;
+  }
+  
+  .scrap-item {
+    padding: 8px 8px 28px 8px;
+  }
+
+  .scrap-label {
+    font-size: 0.68rem;
+    bottom: 6px;
+  }
+}

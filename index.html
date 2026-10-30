@@ -41,6 +41,9 @@
       <a class="nav-link" data-target="gallery"> GALLERY </a>
      </li>
      <li>
+      <a class="nav-link" data-target="logs"> LOGS </a>
+     </li>
+     <li>
       <a class="nav-link" data-target="assets"> ASSETS </a>
      </li>
      <li>
@@ -110,6 +113,14 @@
      <div class="news-scroll-container">
       <ul class="news-list">
        <li class="news-item">
+        <span class="news-date"> 2026.10.31 </span>
+        <span class="news-text"> 
+         GALLERYに2点追加しました（守、進） <br>
+         コンテンツにLOGSを追加しました <br>
+         Galleryの一部画像をLOGSに移動しました 
+        </span>
+       </li>
+       <li class="news-item">
         <span class="news-date"> 2026.10.27 </span>
         <span class="news-text"> GALLERYに1点追加しました（守進） </span>
        </li>
@@ -124,10 +135,6 @@
        <li class="news-item">
         <span class="news-date"> 2026.10.15 </span>
         <span class="news-text"> GALLERYに3点追加しました </span>
-       </li>
-       <li class="news-item">
-        <span class="news-date"> 2026.10.14 </span>
-        <span class="news-text"> GALLERYに1点追加しました </span>
        </li>
        <li class="news-item">
         <span class="news-date"> ――――― </span>
@@ -311,6 +318,12 @@
    <!-- 3. GALLERY -->
    <section id="gallery" class="content-section">
      <h2 class="section-title">GALLERY</h2>
+    
+     <div class="card" style="margin-bottom: 1.5rem;">
+       <p style="color: var(--text-sub); font-size: 0.9rem;">
+         カップリング要素を含む画像は各カテゴリーを選択したときのみ表示されます。
+       </p>
+     </div>
 
      <!-- カテゴリフィルターボタン群 -->
      <div class="gallery-filter-container">
@@ -323,6 +336,14 @@
 
     <!-- 画像グリッド -->
     <div class="gallery-grid">
+     
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/mamoru03.webp', '【ブレザー】猪狩進')">
+     <img src="images/susumu15.webp" alt="【ブレザー】猪狩進" />
+    </div>
+     
+    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/mamoru03.webp', '【ブレザー】猪狩守')">
+     <img src="images/mamoru03.webp" alt="【ブレザー】猪狩守" />
+    </div>
      
     <div class="gallery-item" data-category="pwpr" onclick="openModal('images/susumu14.webp', '【ブレザー】猪狩進')">
      <img src="images/susumu14.webp" alt="【ブレザー】猪狩進" />
@@ -440,10 +461,6 @@
      <img src="images/pair01.webp" alt="【あかつき】猪狩兄弟" />
     </div>
      
-    <div class="gallery-item" data-category="pwpr" onclick="openModal('images/mamoru03.webp', '【あかつき】猪狩守')">
-     <img src="images/mamoru03.webp" alt="【あかつき】猪狩守" />
-    </div>
-     
     <div class="gallery-item" data-category="pwpr" onclick="openModal('images/shindo01.webp', '【レッドエンジェルス】神童裕二郎')">
      <img src="images/shindo01.webp" alt="【レッドエンジェルス】神童裕二郎" />
     </div>
@@ -516,6 +533,184 @@
     </div>
 
     </div>
+   </section>
+   
+   <!-- NEW: LOGS (雑多な試作・ラフ展示) -->
+   <section id="logs" class="content-section">
+     <h2 class="section-title">LOGS</h2>
+
+     <div class="card" style="margin-bottom: 1.5rem;">
+       <p style="color: var(--text-sub); font-size: 0.9rem;">
+         生成実験時のボツ案や惜しいやつなどを展示しています。原作程度の女装を含みます。
+       </p>
+     </div>
+
+     <!-- LOGS用 カテゴリフィルターボタン群 -->
+     <div class="gallery-filter-container">
+       <button class="metal-btn filter-btn active" data-category="all" onclick="filterLogs('all')">ALL</button>
+       <button class="metal-btn filter-btn" data-category="pwpr" onclick="filterLogs('pwpr')">パワプロ</button>
+       <button class="metal-btn filter-btn" data-category="pwad" onclick="filterLogs('pwad')">パワアド</button>
+       <button class="metal-btn filter-btn" data-category="mmss" onclick="filterLogs('mmss')">守進</button>
+       <button class="metal-btn filter-btn" data-category="snss" onclick="filterLogs('snss')">神進</button>
+     </div>
+
+     <!-- コルクボード風 雑多グリッド -->
+     <div class="corkboard-grid">
+      
+       <!-- わずかに右傾き -->
+       <div class="scrap-item rotate-s-r" data-category="pwpr" onclick="openModal('logs/susumu06.webp', '【猪狩進】ボツ案')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/susumu06.webp" alt="【猪狩進】ボツ案" />
+         </div>
+         <span class="scrap-label">SUSUMU</span>
+       </div>
+      
+       <!-- 左傾き -->
+       <div class="scrap-item rotate-l" data-category="pwad" onclick="openModal('logs/pair05.webp', '【パワアド】ボツ案')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/pair05.webp" alt="【パワアド】ボツ案" />
+         </div>
+         <span class="scrap-label">PWAD</span>
+       </div>
+
+       <!-- 右傾き -->
+       <div class="scrap-item rotate-r" data-category="mmss" onclick="openModal('logs/mmss01.webp', '【守進】ボツ案')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/mmss01.webp" alt="【守進】ボツ案" />
+         </div>
+         <span class="scrap-label">PWPR</span>
+       </div>
+      
+       <!-- わずかに左傾き -->
+       <div class="scrap-item rotate-s-l" data-category="snss" onclick="openModal('logs/snss02.webp', '【神進】ボツ案')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/snss02.webp" alt="【神進】ボツ案" />
+         </div>
+         <span class="scrap-label">PWPR</span>
+       </div>
+
+       <!-- わずかに右傾き -->
+       <div class="scrap-item rotate-s-r" data-category="snss" onclick="openModal('logs/snss01.webp', '【神進】ボツ案')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/snss01.webp" alt="【神進】ボツ案" />
+         </div>
+         <span class="scrap-label">PWPR</span>
+       </div>
+      
+       <!-- 左傾き -->
+       <div class="scrap-item rotate-l" data-category="pwpr" onclick="openModal('logs/susumu05.webp', '【猪狩進】ベースの位置が謎')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/susumu05.webp" alt="【猪狩進】ベースの位置が謎" />
+         </div>
+         <span class="scrap-label">SUSUMU</span>
+       </div>
+
+       <!-- 右傾き -->
+       <div class="scrap-item rotate-r" data-category="pwpr" onclick="openModal('logs/pair04.webp', '【進と神童】神童さんが右投げに')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/pair04.webp" alt="【進と神童】神童さんが右投げに" />
+         </div>
+         <span class="scrap-label">PWPR</span>
+       </div>
+
+       <!-- わずかに左傾き -->
+       <div class="scrap-item rotate-s-l" data-category="pwpr" onclick="openModal('logs/pair03.webp', '【進と神童】神童さんが右投げに')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/pair03.webp" alt="【進と神童】神童さんが右投げに" />
+         </div>
+         <span class="scrap-label">PWPR</span>
+       </div>
+
+       <!-- わずかに右傾き -->
+       <div class="scrap-item rotate-s-r" data-category="pwpr" onclick="openModal('logs/pair02.webp', '【進と友沢】友沢が小さすぎた')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/pair02.webp" alt="【進と友沢】友沢が小さすぎた" />
+         </div>
+         <span class="scrap-label">PWPR</span>
+       </div>
+      
+       <!-- 左傾き -->
+       <div class="scrap-item rotate-l" data-category="pwad" onclick="openModal('logs/pair01.webp', '【パワアド】ボツ案')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/pair01.webp" alt="【パワアド】ボツ案" />
+         </div>
+         <span class="scrap-label">PWAD</span>
+       </div>
+
+       <!-- 右傾き -->
+       <div class="scrap-item rotate-r" data-category="pwad" onclick="openModal('logs/susumu04.webp', '【ススム】必殺技カットイン風')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/susumu04.webp" alt="【ススム】必殺技カットイン風" />
+         </div>
+         <span class="scrap-label">SUSUMU</span>
+       </div>
+
+       <!-- わずかに左傾き -->
+       <div class="scrap-item rotate-s-l" data-category="pwad" onclick="openModal('logs/mamoru03.webp', '【マモル】必殺技カットイン風')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/mamoru03.webp" alt="【マモル】必殺技カットイン風" />
+         </div>
+         <span class="scrap-label">MAMORU</span>
+       </div>
+
+       <!-- わずかに右傾き -->
+       <div class="scrap-item rotate-s-r" data-category="pwpr" onclick="openModal('logs/susumu03.webp', '【猪狩進】ボツ案')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/susumu03.webp" alt="【猪狩進】ボツ案" />
+         </div>
+         <span class="scrap-label">SUSUMU</span>
+       </div>
+       
+       <!-- 左傾き -->
+       <div class="scrap-item rotate-l" data-category="pwpr" onclick="openModal('logs/mamoru02.webp', '【猪狩守】可愛いけど別人感が強い')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/mamoru02.webp" alt="【猪狩守】可愛いけど別人感が強い" />
+         </div>
+         <span class="scrap-label">MAMORU</span>
+       </div>
+
+       <!-- 右傾き -->
+       <div class="scrap-item rotate-r" data-category="pwpr" onclick="openModal('logs/susumu02.webp', '【猪狩進】可愛いけど別人感が強い')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/susumu02.webp" alt="【猪狩進】可愛いけど別人感が強い" />
+         </div>
+         <span class="scrap-label">SUSUMU</span>
+       </div>
+
+       <!-- わずかに左傾き -->
+       <div class="scrap-item rotate-s-l" data-category="pwpr" onclick="openModal('logs/susumu01.webp', '【猪狩進】可愛いけど別人感が強い')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/susumu01.webp" alt="【猪狩進】可愛いけど別人感が強い" />
+         </div>
+         <span class="scrap-label">SUSUMU</span>
+       </div>
+
+       <!-- わずかに右傾き -->
+       <div class="scrap-item rotate-s-r" data-category="pwpr" onclick="openModal('logs/mamoru01.webp', '【猪狩守】古めのやつ')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/mamoru01.webp" alt="【猪狩守】古めのやつ" />
+         </div>
+         <span class="scrap-label">MAMORU</span>
+       </div>
+
+     </div>
    </section>
    
    <!-- 4. ASSETS -->
