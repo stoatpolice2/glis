@@ -216,9 +216,144 @@ document.addEventListener('keydown', (e) => {
 window.addEventListener('DOMContentLoaded', () => {
   filterGallery('all');
   filterLogs('all');
+  filterMovies('all');
 });
+
 /* =========================================================
-   5. 素材配布 手動スライダー (キャラクター別)
+   4. MOVIE モーダル表示処理
+   ========================================================= */
+
+// 画像モーダル表示処理
+function openModalByIndex(index) {
+  initActiveModalData();
+  if (activeModalItems.length === 0) return;
+
+  if (index < 0) {
+    currentModalIndex = activeModalItems.length - 1;
+  } else if (index >= activeModalItems.length) {
+    currentModalIndex = 0;
+  } else {
+    currentModalIndex = index;
+  }
+
+  const currentItem = activeModalItems[currentModalIndex];
+  const videoContainer = document.getElementById('js-modal-video-container');
+
+  if (currentItem && modal && modalImg && modalTitle) {
+    // 動画表示エリアを隠し、画像要素を表示
+    if (videoContainer) {
+      videoContainer.style.display = 'none';
+      videoContainer.innerHTML = '';
+    }
+    modalImg.style.display = 'block';
+
+    // 左右矢印ボタンを表示
+    const prevBtn = modal.querySelector('.modal-nav.prev');
+    const nextBtn = modal.querySelector('.modal-nav.next');
+    if (prevBtn) prevBtn.style.display = 'flex';
+    if (nextBtn) nextBtn.style.display = 'flex';
+
+    modalImg.src = currentItem.src;
+    modalTitle.textContent = currentItem.title;
+    modal.style.display = 'flex';
+  }
+}
+
+function openModal(imgSrc, titleText) {
+  initActiveModalData();
+  const index = activeModalItems.findIndex(item => {
+    return item.rawSrc === imgSrc || item.src.endsWith(imgSrc) || item.src === imgSrc;
+  });
+  openModalByIndex(index !== -1 ? index : 0);
+}
+
+function changeModalImage(step) {
+  openModalByIndex(currentModalIndex + step);
+}
+
+// 動画モーダルを表示する関数
+function openVideoModal(videoSrc, titleText) {
+  const videoContainer = document.getElementById('js-modal-video-container');
+  if (!modal || !modalImg || !modalTitle || !videoContainer) return;
+
+  // 画像要素を隠し、動画コンテナを表示
+  modalImg.style.display = 'none';
+  videoContainer.style.display = 'block';
+
+  // <video> 要素を作成してセット
+  videoContainer.innerHTML = `
+    <video class="modal-video" src="${videoSrc}" controls autoplay style="width: 100%; max-height: 75vh; border-radius: 6px; border: 1px solid var(--accent-blue); box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);"></video>
+  `;
+
+  modalTitle.textContent = titleText;
+
+  // 動画再生時は左右矢印ボタンを非表示
+  const prevBtn = modal.querySelector('.modal-nav.prev');
+  const nextBtn = modal.querySelector('.modal-nav.next');
+  if (prevBtn) prevBtn.style.display = 'none';
+  if (nextBtn) nextBtn.style.display = 'none';
+
+  modal.style.display = 'flex';
+}
+
+// モーダルを閉じる関数
+function closeModal() {
+  if (!modal) return;
+  
+  modal.style.display = 'none';
+
+  // 動画が再生中なら停止して消去
+  const videoContainer = document.getElementById('js-modal-video-container');
+  if (videoContainer) {
+    const video = videoContainer.querySelector('video');
+    if (video) {
+      video.pause();
+      video.src = '';
+    }
+    videoContainer.innerHTML = '';
+    videoContainer.style.display = 'none';
+  }
+
+  // 画像の参照をクリア
+  if (modalImg) {
+    modalImg.src = '';
+    modalImg.style.display = 'block';
+  }
+
+  // 左右矢印ボタンを表示状態に戻す
+  const prevBtn = modal.querySelector('.modal-nav.prev');
+  const nextBtn = modal.querySelector('.modal-nav.next');
+  if (prevBtn) prevBtn.style.display = 'flex';
+  if (nextBtn) nextBtn.style.display = 'flex';
+}
+
+// MOVIE用 フィルター
+function filterMovies(category) {
+  const items = document.querySelectorAll('#movie .gallery-item');
+  const filterBtns = document.querySelectorAll('#movie .filter-btn');
+
+  // ボタンのアクティブ状態を切り替え
+  filterBtns.forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-category') === category);
+  });
+
+  // アイテムの表示 / 非表示を切り替え
+  items.forEach(item => {
+    const itemCategory = item.getAttribute('data-category') || '';
+
+    if (category === 'all') {
+      item.classList.remove('hide');
+    } else {
+      item.classList.toggle('hide', itemCategory !== category);
+    }
+  });
+
+  // モーダル用データ（現在表示されているリスト）を再更新
+  initActiveModalData();
+}
+
+/* =========================================================
+   6. 素材配布 手動スライダー (キャラクター別)
    ========================================================= */
 const assetPositions = {
   char1: 0,
@@ -246,7 +381,7 @@ function moveAssetSlide(charId, direction) {
 }
 
 /* =========================================================
-   6. ページトップへ戻るボタンのイベント登録
+   7. ページトップへ戻るボタンのイベント登録
    ========================================================= */
 if (pageTopBtn) {
   // スクロール時に表示切り替え
