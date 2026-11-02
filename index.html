@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="robots" content="noindex, nofollow">
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Glis Studio - AI Illustrated Work &amp; Free Assets</title>
+  <title>Glis Studio - AI Illustrated Work</title>
   
   <!-- ファビコンの設定 -->
   <link rel="icon" href="favicon.webp" type="image/x-icon">
@@ -42,6 +42,9 @@
      </li>
      <li>
       <a class="nav-link" data-target="logs"> LOGS </a>
+     </li>
+     <li>
+      <a class="nav-link" data-target="movie"> MOVIE </a>
      </li>
      <li>
       <a class="nav-link" data-target="assets"> ASSETS </a>
@@ -92,7 +95,7 @@
     <div class="card" style="text-align: center; margin-bottom: 1.5rem">
      <h2>Welcome to Glis Studio</h2>
      <p style="margin-top: 0.5rem; color: var(--text-sub)">
-      当サイトは生成AIを利用して制作した二次創作イラストを展示・配布している個人サイトです<br />
+      当サイトは生成AIを利用して制作した二次創作物を展示・配布している個人サイトです<br />
       作品の中にはBL要素を含むものもあります（カテゴリを分けて展示しています）<br />
       主にパワフルプロ野球シリーズの猪狩進くんを愛でています
      </p>
@@ -114,14 +117,17 @@
       <ul class="news-list">
        <li class="news-item">
         <span class="news-date"> 2026.11.02 </span>
-        <span class="news-text"> GALLERYに1点追加しました（野球マスク） </span>
+        <span class="news-text">
+         GALLERYに2点追加しました（野球マスク、マモル）<br>
+         コンテンツにMOVIEを追加しました <br>
+        </span>
        </li>
        <li class="news-item">
         <span class="news-date"> 2026.10.31 </span>
         <span class="news-text"> 
-         GALLERYに2点追加しました（守、進） <br>
+         GALLERYに2点追加しました（守、進）<br>
          コンテンツにLOGSを追加しました <br>
-         Galleryの一部画像をLOGSに移動しました 
+         GALLERYの一部画像をLOGSに移動しました 
         </span>
        </li>
        <li class="news-item">
@@ -210,7 +216,7 @@
       このサイトについて
      </h3>
      <p>
-      当サイトは、<strong> AI生成イラストの展示 </strong>および、<strong> AI生成イラストを使用した素材の配布 </strong>を行っている個人サイトです。
+      当サイトは、<strong> AI生成イラスト・動画の展示 </strong>および、<strong> AI生成イラストを使用した素材の配布 </strong>を行っている個人サイトです。
      </p>
      <p>
       プロンプト（指示文）の抽出・生成プロセスにおいては、<strong> 自作のイラストをベースに使用 </strong>して制作を行っています。
@@ -335,6 +341,10 @@
 
     <!-- 画像グリッド -->
     <div class="gallery-grid">
+     
+    <div class="gallery-item" data-category="pwad" onclick="openModal('images/mamoru04.webp', '【パワアド】マモル')">
+     <img src="images/mamoru04.webp" alt="【パワアド】マモル" />
+    </div>
      
     <div class="gallery-item" data-category="pwpr" onclick="openModal('images/mask01.webp', '【パワポケ】野球マスク')">
      <img src="images/mask01.webp" alt="【パワポケ】野球マスク" />
@@ -534,7 +544,7 @@
     </div>
    </section>
    
-   <!-- NEW: LOGS (雑多な試作・ラフ展示) -->
+   <!-- 4. LOGS (雑多な試作・ラフ展示) -->
    <section id="logs" class="content-section">
      <h2 class="section-title">LOGS</h2>
 
@@ -725,7 +735,42 @@
      </div>
    </section>
    
-   <!-- 4. ASSETS -->
+   <!-- 6. MOVIE -->
+   <section id="movie" class="content-section">
+     <h2 class="section-title">MOVIE</h2>
+
+     <div class="card" style="margin-bottom: 1.5rem;">
+       <p style="color: var(--text-sub); font-size: 0.9rem;">
+         「音声あり」カテゴリーの動画にはAIが生成したCVが付いているので、こだわりがある場合はミュート推奨です。
+       </p>
+     </div>
+
+     <!-- MOVIE用 カテゴリフィルターボタン群（追加） -->
+     <div class="gallery-filter-container">
+       <button class="metal-btn filter-btn active" data-category="all" onclick="filterMovies('all')">ALL</button>
+       <button class="metal-btn filter-btn" data-category="audio" onclick="filterMovies('audio')">音声あり</button>
+       <button class="metal-btn filter-btn" data-category="mute" onclick="filterMovies('mute')">音声なし</button>
+     </div>
+
+     <!-- 動画サムネイル一覧グリッド -->
+     <div class="gallery-grid">
+
+       <!-- 動画アイテム 01（音声ありの例：data-category="audio" を指定） -->
+       <div class="gallery-item video-item" data-category="audio" onclick="openVideoModal('movies/video01.mp4', '【パワポケ】野球マスク')">
+         <div class="play-icon-overlay">▶</div>
+         <img src="images/mask01.webp" alt="【パワポケ】野球マスク" />
+       </div>
+
+       <!-- 動画アイテム 02（音声なしの例：data-category="mute" を指定） -->
+       <div class="gallery-item video-item" data-category="mute" onclick="openVideoModal('movies/video02.mp4', '【パワアド】マモル')">
+         <div class="play-icon-overlay">▶</div>
+         <img src="images/mamoru04.webp" alt="【パワアド】マモル" />
+       </div>
+
+     </div>
+   </section>
+   
+   <!-- 6. ASSETS -->
    <section class="content-section" id="assets">
     <h2 class="section-title">FREE ASSETS</h2>
 
@@ -909,7 +954,7 @@
     </div>
    </section>
 
-   <!-- 5. PROCESS -->
+   <!-- 7. PROCESS -->
    <section class="content-section" id="process">
     <h2 class="section-title">PROCESS</h2>
     
@@ -937,7 +982,7 @@
       <div class="process-step-body">
        <div class="process-step-img-wrapper">
         <div class="process-step-img">
-         <img src="images/process01.webp" alt="プロンプト抽出に使用した自作絵" />
+         <img src="process/process01.webp" alt="プロンプト抽出に使用した自作絵" />
         </div>
         <p class="process-img-caption">▲ プロンプト抽出に使用した自作絵</p>
        </div>       
@@ -964,7 +1009,7 @@
       <div class="process-step-body">
        <div class="process-step-img-wrapper">
         <div class="process-step-img">
-         <img src="images//process02.webp" alt="プロンプトを元にPixAIが生成した画像" />
+         <img src="process/process02.webp" alt="プロンプトを元にPixAIが生成した画像" />
         </div>
         <p class="process-img-caption">▲ プロンプトを元にPixAIが生成した画像</p>
        </div>
@@ -1016,7 +1061,7 @@
       <div class="process-step-body">
        <div class="process-step-img-wrapper">
         <div class="process-step-img">
-         <img src="images/process03.webp" alt="プロンプトを元にCopilotが作成した画像" />
+         <img src="process/process03.webp" alt="プロンプトを元にCopilotが作成した画像" />
         </div>
         <p class="process-img-caption">▲ プロンプトを元にCopilotが作成した画像</p>
        </div>       
@@ -1041,7 +1086,7 @@
       <div class="process-step-body">
        <div class="process-step-img-wrapper">
         <div class="process-step-img">
-         <img src="images//process04.webp" alt="参考画像として使用した自作絵" />
+         <img src="process/process04.webp" alt="参考画像として使用した自作絵" />
         </div>
         <p class="process-img-caption">▲ 参考画像として使用した自作絵</p>
        </div>
@@ -1090,7 +1135,7 @@
       <div class="process-step-body">
        <div class="process-step-img-wrapper">
         <div class="process-step-img">
-         <img src="images/process05.webp" alt="「うちの子」機能で作成した進っぽいキャラの画像" />
+         <img src="process/process05.webp" alt="「うちの子」機能で作成した進っぽいキャラの画像" />
         </div>
         <p class="process-img-caption">▲ 「うちの子」機能で作成した進っぽいキャラの画像</p>
        </div>       
@@ -1115,7 +1160,7 @@
       <div class="process-step-body">
        <div class="process-step-img-wrapper">
         <div class="process-step-img">
-         <img src="images//process06.webp" alt="「うちの子」と「テーマ」を使って作成した画像" />
+         <img src="process/process06.webp" alt="「うちの子」と「テーマ」を使って作成した画像" />
         </div>
         <p class="process-img-caption">▲ 「うちの子」と「テーマ」を使って作成した画像</p>
        </div>
@@ -1142,7 +1187,7 @@
       <div class="process-step-body">
        <div class="process-step-img-wrapper">
         <div class="process-step-img">
-         <img src="images//process07.webp" alt="参考画像として使用した自作絵" />
+         <img src="process/process07.webp" alt="参考画像として使用した自作絵" />
         </div>
         <p class="process-img-caption">▲ 参考画像として使用した自作絵</p>
        </div>
@@ -1175,7 +1220,7 @@
 
    </section>
 
-   <!-- 6. PROFILE -->
+   <!-- 8. PROFILE -->
    <section class="content-section" id="profile">
     <h2 class="section-title">PROFILE</h2>
     <div class="card">
@@ -1268,7 +1313,13 @@
     <button class="modal-nav prev" onclick="event.stopPropagation(); changeModalImage(-1)">&lt;</button>
     
     <div class="modal-container" onclick="event.stopPropagation()">
+      <!-- ① 画像表示用エリア -->
       <img id="js-modal-img" class="modal-content" src="" alt="拡大画像">
+      
+      <!-- ② 動画表示用エリア（追加） -->
+      <div id="js-modal-video-container" style="display: none; width: 100%;"></div>
+
+      <!-- タイトル表示 -->
       <div id="js-modal-title" class="modal-title"></div>
     </div>
 
