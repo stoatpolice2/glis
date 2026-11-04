@@ -562,12 +562,11 @@
       transform: translateX(-50%);
       width: 92%;
       display: flex;
-      gap: 4px;
       justify-content: center;
     }
 
     .asset-dl-btn {
-      flex: 1;
+      width: 70%;
       font-size: 0.75rem;
       padding: 0.4rem 0.2rem;
       white-space: nowrap;
