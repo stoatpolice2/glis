@@ -271,18 +271,32 @@ function changeModalImage(step) {
   openModalByIndex(currentModalIndex + step);
 }
 
-// 動画モーダルを表示する関数
-function openVideoModal(videoSrc, titleText) {
+// Vimeo動画モーダルを表示する関数（isPortrait: 縦長動画かどうか）
+function openVimeoModal(vimeoId, titleText, isPortrait = false) {
   const videoContainer = document.getElementById('js-modal-video-container');
+  const modalContainer = modal ? modal.querySelector('.modal-container') : null;
   if (!modal || !modalImg || !modalTitle || !videoContainer) return;
+
+  // 動画表示時はモーダルコンテナ自体の幅を設定
+  if (modalContainer) {
+    modalContainer.style.width = '100%';
+    // 縦長の場合は最大幅を狭め、横長の場合は900pxにする
+    modalContainer.style.maxWidth = isPortrait ? '450px' : '900px';
+  }
 
   // 画像要素を隠し、動画コンテナを表示
   modalImg.style.display = 'none';
   videoContainer.style.display = 'block';
 
-  // <video> 要素を作成してセット
+  // Vimeo iframe を動的作成（isPortrait に応じて is-portrait クラスを付与）
   videoContainer.innerHTML = `
-    <video class="modal-video" src="${videoSrc}" controls autoplay style="width: 100%; max-height: 75vh; border-radius: 6px; border: 1px solid var(--accent-blue); box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);"></video>
+    <div class="vimeo-wrapper ${isPortrait ? 'is-portrait' : ''}">
+      <iframe 
+        src="https://player.vimeo.com/video/${vimeoId}?autoplay=1&color=00d2ff&title=0&byline=0&portrait=0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
   `;
 
   modalTitle.textContent = titleText;
@@ -302,14 +316,17 @@ function closeModal() {
   
   modal.style.display = 'none';
 
+  // 画像表示用に戻すため、モーダルコンテナの幅指定をリセット
+  const modalContainer = modal.querySelector('.modal-container');
+  if (modalContainer) {
+    modalContainer.style.width = '';
+    modalContainer.style.maxWidth = '';
+  }
+
   // 動画が再生中なら停止して消去
   const videoContainer = document.getElementById('js-modal-video-container');
   if (videoContainer) {
-    const video = videoContainer.querySelector('video');
-    if (video) {
-      video.pause();
-      video.src = '';
-    }
+    const video = videoContainer.querySelector('iframe, video');
     videoContainer.innerHTML = '';
     videoContainer.style.display = 'none';
   }

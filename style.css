@@ -1157,3 +1157,42 @@ section[id] {
   box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
   outline: none;
 }
+
+/* =========================================================
+   Vimeo埋め込みモーダル用スタイル（縦横比対応版）
+   ========================================================= */
+#js-modal-video-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.vimeo-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9; /* デフォルトは横長 (16:9) */
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--accent-blue);
+  box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
+  background: #000;
+  transition: max-width 0.3s ease, aspect-ratio 0.3s ease;
+}
+
+/* 縦長動画用のクラス */
+.vimeo-wrapper.is-portrait {
+  aspect-ratio: 9 / 16; /* 縦長 (9:16) に変更 */
+  max-width: calc(75vh * 9 / 16); /* 画面の高さを基準にして横幅を調整 */
+  height: 75vh;
+}
+
+.vimeo-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
