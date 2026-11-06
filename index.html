@@ -114,8 +114,14 @@
      </h3>
      <!-- スクリプト用・スクロール用コンテナ -->
      <div class="news-scroll-container">
-      <ul class="news-list">
+      <ul class="news-list">       
        
+       <li class="news-item">
+        <span class="news-date"> 2026.11.07 </span>
+        <span class="news-text">
+         LOGSに1点追加しました（進）<br>
+         MOVIEに1点追加しました（進） </span>
+       </li>
        <li class="news-item">
         <span class="news-date"> 2026.11.04 </span>
         <span class="news-text">
@@ -140,10 +146,6 @@
          コンテンツにLOGSを追加しました <br>
          GALLERYの一部画像をLOGSに移動しました 
         </span>
-       </li>
-       <li class="news-item">
-        <span class="news-date"> 2026.10.27 </span>
-        <span class="news-text"> GALLERYに1点追加しました（守進） </span>
        </li>
        <li class="news-item">
         <span class="news-date"> ――――― </span>
@@ -578,6 +580,15 @@
      <!-- コルクボード風 雑多グリッド -->
      <div class="corkboard-grid">
       
+       <!-- 右傾き -->
+       <div class="scrap-item rotate-r" data-category="pwpr" onclick="openModal('logs/susumu07.webp', '【猪狩進】動画の元絵')">
+         <div class="tape"></div>
+         <div class="scrap-img-wrapper">
+           <img src="logs/susumu07.webp" alt="【猪狩進】動画の元絵" />
+         </div>
+         <span class="scrap-label">PWPR</span>
+       </div>
+      
        <!-- わずかに左傾き -->
        <div class="scrap-item rotate-s-l" data-category="pwpr" onclick="openModal('logs/susumu06.webp', '【猪狩進】ウェイトレス')">
          <div class="tape"></div>
@@ -779,17 +790,24 @@
 
      <!-- 動画サムネイル一覧グリッド -->
      <div class="gallery-grid">
+      
+      
+       <!-- 縦長動画（第3引数は false または省略） -->
+       <div class="gallery-item video-item" data-category="audio" onclick="openVimeoModal('1244290242', '【オリックス】猪狩進', true)">
+         <div class="play-icon-overlay">▶</div>
+         <img src="logs/susumu07.webp" alt="【オリックス】猪狩進" />
+       </div>
+      
+       <!-- 横長動画（第3引数に true を指定） -->
+       <div class="gallery-item video-item" data-category="mute" onclick="openVimeoModal('1243564283', '【パワアド】マモル', false)">
+         <div class="play-icon-overlay">▶</div>
+         <img src="system/movie01.webp" alt="【パワアド】マモル" />
+       </div>
 
-       <!-- 例：横長動画の場合（第3引数は false または省略） -->
+       <!-- 縦長動画（第3引数は false または省略） -->
        <div class="gallery-item video-item" data-category="audio" onclick="openVimeoModal('1243562325', '【パワポケ】野球マスク', true)">
          <div class="play-icon-overlay">▶</div>
          <img src="images/mask01.webp" alt="【パワポケ】野球マスク" />
-       </div>
-
-       <!-- 例：縦長動画（TikTok/Reels/ショート風）の場合（第3引数に true を指定） -->
-       <div class="gallery-item video-item" data-category="mute" onclick="openVimeoModal('1243564283', '【パワアド】マモル', false)">
-         <div class="play-icon-overlay">▶</div>
-         <img src="system/movie02.webp" alt="【パワアド】マモル" />
        </div>
 
      </div>
